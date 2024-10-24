@@ -1,10 +1,11 @@
+import { RouterProvider } from "react-router-dom";
 import "./App.css";
-import { EmotionImageComponent } from "./components/EmotionImageComponent";
+import { router } from "./Router";
 
 function App() {
   return (
     <>
-      <EmotionImageComponent />
+      <RouterProvider router={router}></RouterProvider>
     </>
   );
 }

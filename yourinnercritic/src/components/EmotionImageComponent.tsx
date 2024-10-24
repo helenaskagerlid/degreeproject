@@ -15,7 +15,6 @@ export const EmotionImageComponent = () => {
   };
   return (
     <>
-      <h1>LET'S GO!</h1>
       <p>LÄNGD: {myPhotos.length}</p>
       <form onSubmit={handleSubmit}>
         <input
