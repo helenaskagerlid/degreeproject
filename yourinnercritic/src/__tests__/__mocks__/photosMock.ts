@@ -1,0 +1,31 @@
+export const photosMock = {
+  data: {
+    hits: [
+      {
+        id: 1,
+        pageURL: "https://pixabay.com/photos/example",
+        type: "photo",
+        tags: "nature, forest",
+        previewURL: "https://example.com/preview.jpg",
+        previewWidth: 150,
+        previewHeight: 100,
+        webformatURL: "https://example.com/webformat.jpg",
+        webformatWidth: 640,
+        webformatHeight: 480,
+        largeImageURL: "https://example.com/large.jpg",
+        fullHDURL: "https://example.com/fullhd.jpg",
+        imageURL: "https://example.com/image.jpg",
+        imageWidth: 1920,
+        imageHeight: 1080,
+        imageSize: 500000,
+        views: 1000,
+        downloads: 100,
+        likes: 50,
+        comments: 10,
+        user_id: 123,
+        user: "exampleUser",
+        userImageURL: "https://example.com/user.jpg",
+      },
+    ],
+  },
+};
