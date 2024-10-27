@@ -10,12 +10,12 @@ export const EmotionImageComponent = () => {
     e.preventDefault();
     const photos = await getPhotos(userInput);
 
-    console.log("MEN KOLLA", photos);
     setMyPhotos(photos);
   };
   return (
     <>
-      <p>LÄNGD: {myPhotos.length}</p>
+      <h2>Emotion Image Component</h2>
+      <p>Lorem Ipsum</p>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
