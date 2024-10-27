@@ -1,19 +1,19 @@
 interface IPropsIntroComponent {
   setIsStartedTrue: (value: boolean) => void;
-  criticThoughtsRef: React.RefObject<HTMLElement>;
+  //   criticThoughtsRef: React.RefObject<HTMLElement>;
 }
 
 export const IntroComponent = ({
   setIsStartedTrue,
-  criticThoughtsRef,
-}: IPropsIntroComponent) => {
+}: //   criticThoughtsRef,
+IPropsIntroComponent) => {
   const getStarted = () => {
     setIsStartedTrue(true);
-    setTimeout(() => {
-      criticThoughtsRef.current?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }, 0);
+    // setTimeout(() => {
+    //   criticThoughtsRef.current?.scrollIntoView({
+    //     behavior: "smooth",
+    //   });
+    // }, 0);
   };
   return (
     <>
@@ -30,7 +30,9 @@ export const IntroComponent = ({
           situation where your inner critic was active, and follow along as we
           guide you through the process of addressing it in a new and fun way.
         </p>
-        <button onClick={getStarted}>Get started</button>
+        <button id="startBtn" className="start-btn" onClick={getStarted}>
+          Get started
+        </button>
       </section>
     </>
   );

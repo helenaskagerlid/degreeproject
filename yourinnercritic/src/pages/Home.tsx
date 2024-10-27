@@ -10,7 +10,7 @@ export const Home = () => {
     <>
       <IntroComponent
         setIsStartedTrue={setIsStartedTrue}
-        criticThoughtsRef={criticThoughtsRef}
+        // criticThoughtsRef={criticThoughtsRef}
       />
       {isStartedTrue && (
         <CriticThoughtsComponent criticThoughtsRef={criticThoughtsRef} />
