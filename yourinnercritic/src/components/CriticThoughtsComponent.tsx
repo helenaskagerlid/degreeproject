@@ -1,14 +1,21 @@
 import { FormEvent, useState } from "react";
 import { saveCriticalThoughts } from "../helpers/saveToLocalStorage";
+import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
 interface IPropsCriticThoughtsComponent {
   criticThoughtsRef: React.RefObject<HTMLElement>;
+  setStepTwo: (value: boolean) => void;
 }
 
 export const CriticThoughtsComponent = ({
   criticThoughtsRef,
+  setStepTwo,
 }: IPropsCriticThoughtsComponent) => {
   const [userInput, setUserInput] = useState("");
+
+  const handleClick = () => {
+    setStepTwo(true);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -36,6 +43,10 @@ export const CriticThoughtsComponent = ({
           />
           <button>Save</button>
         </form>
+        <button onClick={handleClick}>
+          {" "}
+          <ScrollArrowComponent />
+        </button>
       </section>
     </>
   );
