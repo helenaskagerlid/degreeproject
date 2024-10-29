@@ -1,40 +1,63 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { EmotionImageComponent } from "../components/EmotionImageComponent";
 import { IntroComponent } from "../components/IntroComponent";
 import { CriticThoughtsComponent } from "../components/CriticThoughtsComponent";
 import { SliderComponent } from "../components/SliderComponent";
 import { NoticeEmotionComponent } from "../components/NoticeEmotionComponent";
+import { scrollToNextStep } from "../helpers/scrollToNextStep";
 
 export const Home = () => {
   const [stepOne, setStepOne] = useState<boolean>(false);
+  const [stepTwo, setStepTwo] = useState<boolean>(false);
+  const [stepThree, setStepThree] = useState<boolean>(false);
+  const [stepFour, setStepFour] = useState<boolean>(false);
   const criticThoughtsRef = useRef<HTMLElement>(null);
+  const sliderRef = useRef<HTMLElement>(null);
+  const noticeEmotionRef = useRef<HTMLElement>(null);
+  const emotionImageRef = useRef<HTMLElement>(null);
 
-  const scrollToNextStep = (refElement: HTMLElement) => {
-    if (refElement) {
-      const headerHeight = 120;
-      const offsetTop =
-        refElement.getBoundingClientRect().top + window.scrollY - headerHeight;
-
-      window.scrollTo({
-        top: offsetTop,
-        behavior: "smooth",
-      });
+  useEffect(() => {
+    if (stepOne && criticThoughtsRef.current) {
+      setTimeout(() => {
+        scrollToNextStep(criticThoughtsRef.current!);
+      }, 50);
     }
-  };
+    if (stepTwo && sliderRef.current) {
+      setTimeout(() => {
+        scrollToNextStep(sliderRef.current!);
+      }, 50);
+    }
+    if (stepThree && noticeEmotionRef.current) {
+      setTimeout(() => {
+        scrollToNextStep(noticeEmotionRef.current!);
+      }, 50);
+    }
+    if (stepFour && emotionImageRef.current) {
+      setTimeout(() => {
+        scrollToNextStep(emotionImageRef.current!);
+      }, 50);
+    }
+  }, [stepOne, stepTwo, stepThree, stepFour]);
 
   return (
     <>
-      <IntroComponent
-        setStepOne={setStepOne}
-        scrollToNextStep={scrollToNextStep}
-        criticThoughtsRef={criticThoughtsRef}
-      />
+      <IntroComponent setStepOne={setStepOne} />
       {stepOne && (
-        <CriticThoughtsComponent criticThoughtsRef={criticThoughtsRef} />
+        <CriticThoughtsComponent
+          criticThoughtsRef={criticThoughtsRef}
+          setStepTwo={setStepTwo}
+        />
       )}
-      {stepOne && <EmotionImageComponent />}
-      <SliderComponent />
-      <NoticeEmotionComponent />
+      {stepTwo && (
+        <SliderComponent setStepThree={setStepThree} sliderRef={sliderRef} />
+      )}
+      {stepThree && (
+        <NoticeEmotionComponent
+          setStepFour={setStepFour}
+          noticeEmotionRef={noticeEmotionRef}
+        />
+      )}
+      {stepFour && <EmotionImageComponent emotionImageRef={emotionImageRef} />}
     </>
   );
 };

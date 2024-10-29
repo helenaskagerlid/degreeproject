@@ -1,19 +1,10 @@
 interface IPropsIntroComponent {
   setStepOne: (value: boolean) => void;
-  scrollToNextStep: (elementRef: HTMLElement) => void;
-  criticThoughtsRef: React.RefObject<HTMLElement>;
 }
 
-export const IntroComponent = ({
-  setStepOne,
-  scrollToNextStep,
-  criticThoughtsRef,
-}: IPropsIntroComponent) => {
+export const IntroComponent = ({ setStepOne }: IPropsIntroComponent) => {
   const getStarted = () => {
     setStepOne(true);
-    setTimeout(() => {
-      scrollToNextStep(criticThoughtsRef.current!);
-    }, 0);
   };
   return (
     <>
