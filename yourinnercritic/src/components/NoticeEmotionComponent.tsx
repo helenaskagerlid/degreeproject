@@ -23,7 +23,7 @@ export const NoticeEmotionComponent = ({
         </p>
         <img
           className="notice-emotion-img"
-          src="../../public/noticeemotionimg.jpg"
+          src="/noticeemotionimg.jpg"
           alt=""
         />
         <button onClick={handleClick}>

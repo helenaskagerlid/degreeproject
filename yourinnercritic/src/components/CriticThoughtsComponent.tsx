@@ -27,7 +27,7 @@ export const CriticThoughtsComponent = ({
       <section ref={criticThoughtsRef}>
         <img
           className="critic-thoughts-img"
-          src="../../public/criticthoughtsimg.jpg"
+          src="/criticthoughtsimg.jpg"
           alt=""
         />
         <h2>Step 1: Your inner Ciritic's Thoughts</h2>
