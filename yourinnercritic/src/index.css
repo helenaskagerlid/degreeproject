@@ -71,7 +71,7 @@ a {
 }
 
 .color-bulb {
-  max-height: 400px;
+  max-height: 350px;
   width: 800px;
   object-fit: cover;
 }
@@ -116,4 +116,16 @@ a {
 .slider-value {
   font-size: 1.2em;
   font-weight: 600;
+}
+
+.critic-thoughts-img {
+  max-height: 500px;
+  width: 50%;
+  object-fit: cover;
+}
+
+.notice-emotion-img {
+  max-height: 500px;
+  width: 50%;
+  object-fit: cover;
 }

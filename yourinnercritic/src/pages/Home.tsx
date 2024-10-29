@@ -3,9 +3,10 @@ import { EmotionImageComponent } from "../components/EmotionImageComponent";
 import { IntroComponent } from "../components/IntroComponent";
 import { CriticThoughtsComponent } from "../components/CriticThoughtsComponent";
 import { SliderComponent } from "../components/SliderComponent";
+import { NoticeEmotionComponent } from "../components/NoticeEmotionComponent";
 
 export const Home = () => {
-  const [isStartedTrue, setIsStartedTrue] = useState<boolean>(false);
+  const [stepOne, setStepOne] = useState<boolean>(false);
   const criticThoughtsRef = useRef<HTMLElement>(null);
 
   const scrollToNextStep = (refElement: HTMLElement) => {
@@ -24,15 +25,16 @@ export const Home = () => {
   return (
     <>
       <IntroComponent
-        setIsStartedTrue={setIsStartedTrue}
+        setStepOne={setStepOne}
         scrollToNextStep={scrollToNextStep}
         criticThoughtsRef={criticThoughtsRef}
       />
-      {isStartedTrue && (
+      {stepOne && (
         <CriticThoughtsComponent criticThoughtsRef={criticThoughtsRef} />
       )}
-      {isStartedTrue && <EmotionImageComponent />}
+      {stepOne && <EmotionImageComponent />}
       <SliderComponent />
+      <NoticeEmotionComponent />
     </>
   );
 };
