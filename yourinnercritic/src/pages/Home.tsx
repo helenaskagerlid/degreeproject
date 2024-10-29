@@ -2,6 +2,7 @@ import { useRef, useState } from "react";
 import { EmotionImageComponent } from "../components/EmotionImageComponent";
 import { IntroComponent } from "../components/IntroComponent";
 import { CriticThoughtsComponent } from "../components/CriticThoughtsComponent";
+import { SliderComponent } from "../components/SliderComponent";
 
 export const Home = () => {
   const [isStartedTrue, setIsStartedTrue] = useState<boolean>(false);
@@ -31,6 +32,7 @@ export const Home = () => {
         <CriticThoughtsComponent criticThoughtsRef={criticThoughtsRef} />
       )}
       {isStartedTrue && <EmotionImageComponent />}
+      <SliderComponent />
     </>
   );
 };
