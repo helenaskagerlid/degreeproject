@@ -1,16 +1,16 @@
 interface IPropsIntroComponent {
-  setIsStartedTrue: (value: boolean) => void;
+  setStepOne: (value: boolean) => void;
   scrollToNextStep: (elementRef: HTMLElement) => void;
   criticThoughtsRef: React.RefObject<HTMLElement>;
 }
 
 export const IntroComponent = ({
-  setIsStartedTrue,
+  setStepOne,
   scrollToNextStep,
   criticThoughtsRef,
 }: IPropsIntroComponent) => {
   const getStarted = () => {
-    setIsStartedTrue(true);
+    setStepOne(true);
     setTimeout(() => {
       scrollToNextStep(criticThoughtsRef.current!);
     }, 0);
@@ -20,7 +20,7 @@ export const IntroComponent = ({
       <section className="intro-component-section">
         <img
           className="color-bulb"
-          src="../../src/assets/color_bulb.jpg"
+          src="../../src/assets/feelingsimg.jpg"
           alt=""
         />
         <h1>Welcome to Tame Your Inner Critic</h1>

@@ -18,6 +18,11 @@ export const CriticThoughtsComponent = ({
   return (
     <>
       <section ref={criticThoughtsRef}>
+        <img
+          className="critic-thoughts-img"
+          src="../../src/assets/criticthoughtsimg.jpg"
+          alt=""
+        />
         <h2>Step 1: Your inner Ciritic's Thoughts</h2>
         <p>
           Take a moment to notice which kinds of thoughts your inner ciritc is
