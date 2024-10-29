@@ -1,19 +1,19 @@
 interface IPropsIntroComponent {
   setIsStartedTrue: (value: boolean) => void;
-  //   criticThoughtsRef: React.RefObject<HTMLElement>;
+  scrollToNextStep: (elementRef: HTMLElement) => void;
+  criticThoughtsRef: React.RefObject<HTMLElement>;
 }
 
 export const IntroComponent = ({
   setIsStartedTrue,
-}: //   criticThoughtsRef,
-IPropsIntroComponent) => {
+  scrollToNextStep,
+  criticThoughtsRef,
+}: IPropsIntroComponent) => {
   const getStarted = () => {
     setIsStartedTrue(true);
-    // setTimeout(() => {
-    //   criticThoughtsRef.current?.scrollIntoView({
-    //     behavior: "smooth",
-    //   });
-    // }, 0);
+    setTimeout(() => {
+      scrollToNextStep(criticThoughtsRef.current!);
+    }, 0);
   };
   return (
     <>
