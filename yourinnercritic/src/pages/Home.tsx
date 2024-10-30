@@ -7,16 +7,23 @@ import { NoticeEmotionComponent } from "../components/NoticeEmotionComponent";
 import { scrollToNextStep } from "../helpers/scrollToNextStep";
 
 export const Home = () => {
+  const [fetchedPhotos, setFetchedPhotos] = useState(false);
   const [stepOne, setStepOne] = useState<boolean>(false);
   const [stepTwo, setStepTwo] = useState<boolean>(false);
   const [stepThree, setStepThree] = useState<boolean>(false);
   const [stepFour, setStepFour] = useState<boolean>(false);
+  const fetchedImageRef = useRef<HTMLElement>(null);
   const criticThoughtsRef = useRef<HTMLElement>(null);
   const sliderRef = useRef<HTMLElement>(null);
   const noticeEmotionRef = useRef<HTMLElement>(null);
   const emotionImageRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    if (fetchedPhotos && fetchedImageRef) {
+      setTimeout(() => {
+        scrollToNextStep(fetchedImageRef.current!);
+      }, 200);
+    }
     if (stepOne && criticThoughtsRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticThoughtsRef.current!);
@@ -37,7 +44,7 @@ export const Home = () => {
         scrollToNextStep(emotionImageRef.current!);
       }, 100);
     }
-  }, [stepOne, stepTwo, stepThree, stepFour]);
+  }, [fetchedPhotos, stepOne, stepTwo, stepThree, stepFour]);
 
   return (
     <>
@@ -57,7 +64,14 @@ export const Home = () => {
           noticeEmotionRef={noticeEmotionRef}
         />
       )}
-      {stepFour && <EmotionImageComponent emotionImageRef={emotionImageRef} />}
+      {stepFour && (
+        <EmotionImageComponent
+          fetchedPhotos={fetchedPhotos}
+          setFetchedPhotos={setFetchedPhotos}
+          emotionImageRef={emotionImageRef}
+          fetchedImageRef={fetchedImageRef}
+        />
+      )}
     </>
   );
 };
