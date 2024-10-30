@@ -23,7 +23,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(100% - 48px, 1200px);
+  width: min(100% - 48px, 900px);
   margin-inline: auto;
   padding-block: 60px;
   text-align: center;
@@ -86,7 +86,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 50%;
+  width: 80%;
 }
 
 .slider {
@@ -124,12 +124,8 @@ a {
   font-weight: 600;
 }
 
-.critic-thoughts-img {
-  max-height: 500px;
-  width: 50%;
-  object-fit: cover;
-}
-
+.critic-thoughts-img,
+.intro-emotion-image,
 .notice-emotion-img {
   max-height: 500px;
   width: 50%;
