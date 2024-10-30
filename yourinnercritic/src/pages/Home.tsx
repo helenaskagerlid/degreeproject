@@ -20,22 +20,22 @@ export const Home = () => {
     if (stepOne && criticThoughtsRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticThoughtsRef.current!);
-      }, 50);
+      }, 100);
     }
     if (stepTwo && sliderRef.current) {
       setTimeout(() => {
         scrollToNextStep(sliderRef.current!);
-      }, 50);
+      }, 100);
     }
     if (stepThree && noticeEmotionRef.current) {
       setTimeout(() => {
         scrollToNextStep(noticeEmotionRef.current!);
-      }, 50);
+      }, 100);
     }
     if (stepFour && emotionImageRef.current) {
       setTimeout(() => {
         scrollToNextStep(emotionImageRef.current!);
-      }, 50);
+      }, 100);
     }
   }, [stepOne, stepTwo, stepThree, stepFour]);
 
