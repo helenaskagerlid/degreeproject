@@ -126,8 +126,14 @@ a {
 
 .critic-thoughts-img,
 .intro-emotion-image,
-.notice-emotion-img {
+.notice-emotion-img,
+.critic-name-image {
   max-height: 500px;
   width: 50%;
   object-fit: cover;
+}
+
+.not-asked-for-advice {
+  font-size: 0.9em;
+  font-style: italic;
 }

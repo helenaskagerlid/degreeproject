@@ -1,12 +1,14 @@
 import { FormEvent, useState } from "react";
 import { IHits } from "../models/IPixabayResponse";
 import { getPhotos } from "../service/getPhotosService";
+import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
 interface IEmotionImageComponentProps {
   emotionImageRef: React.RefObject<HTMLElement>;
   fetchedPhotos: boolean;
-  setFetchedPhotos: (value: boolean) => void;
   fetchedImageRef: React.RefObject<HTMLElement>;
+  setFetchedPhotos: (value: boolean) => void;
+  setStepFive: (value: boolean) => void;
 }
 
 export const EmotionImageComponent = ({
@@ -14,6 +16,7 @@ export const EmotionImageComponent = ({
   fetchedPhotos,
   setFetchedPhotos,
   fetchedImageRef,
+  setStepFive,
 }: IEmotionImageComponentProps) => {
   const [myPhotos, setMyPhotos] = useState<IHits[]>([]);
   const [userInput, setUserInput] = useState("");
@@ -24,6 +27,10 @@ export const EmotionImageComponent = ({
     const photos = await getPhotos(userInput);
     setMyPhotos(photos);
     setFetchedPhotos(true);
+  };
+
+  const handleClick = () => {
+    setStepFive(true);
   };
   return (
     <>
@@ -62,6 +69,9 @@ export const EmotionImageComponent = ({
             ))}
           </section>
         )}
+        <button onClick={handleClick}>
+          <ScrollArrowComponent />
+        </button>
       </section>
     </>
   );
