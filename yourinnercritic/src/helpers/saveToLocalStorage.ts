@@ -1,8 +1,8 @@
-export const saveCriticalThoughts = (criticalThoughts: string) => {
-  localStorage.setItem("criticalThoughts", JSON.stringify(criticalThoughts));
+export const saveToLocalStorage = (name: string, item: string) => {
+  localStorage.setItem(name, JSON.stringify(item));
 };
 
-export const getSavedCriticalThoughts = () => {
-  const savedThoughts = localStorage.getItem("criticalThoughts");
-  return savedThoughts ? JSON.parse(savedThoughts) : "";
+export const getFromLocalStorage = (key: string) => {
+  const savedItem = localStorage.getItem(key);
+  return savedItem ? JSON.parse(savedItem) : "";
 };

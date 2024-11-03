@@ -22,27 +22,27 @@ export const Home = () => {
     if (fetchedPhotos && fetchedImageRef) {
       setTimeout(() => {
         scrollToNextStep(fetchedImageRef.current!);
-      }, 200);
+      }, 300);
     }
     if (stepOne && criticThoughtsRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticThoughtsRef.current!);
-      }, 100);
+      }, 200);
     }
     if (stepTwo && sliderRef.current) {
       setTimeout(() => {
         scrollToNextStep(sliderRef.current!);
-      }, 100);
+      }, 200);
     }
     if (stepThree && noticeEmotionRef.current) {
       setTimeout(() => {
         scrollToNextStep(noticeEmotionRef.current!);
-      }, 100);
+      }, 200);
     }
     if (stepFour && emotionImageRef.current) {
       setTimeout(() => {
         scrollToNextStep(emotionImageRef.current!);
-      }, 100);
+      }, 200);
     }
   }, [fetchedPhotos, stepOne, stepTwo, stepThree, stepFour]);
 

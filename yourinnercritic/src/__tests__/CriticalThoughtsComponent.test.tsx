@@ -1,7 +1,7 @@
 import { afterEach, describe, test, vi, expect } from "vitest";
 import {
-  getSavedCriticalThoughts,
-  saveCriticalThoughts,
+  getFromLocalStorage,
+  saveToLocalStorage,
 } from "../helpers/saveToLocalStorage";
 
 const criticalThoughtsKey = "criticalThoughts";
@@ -18,7 +18,7 @@ describe("Ciritical thoughts component tests", () => {
     const savedText = "Test";
 
     //act
-    saveCriticalThoughts(savedText);
+    saveToLocalStorage(criticalThoughtsKey, savedText);
 
     //assert
     expect(setItemSpy).toHaveBeenCalledWith(
@@ -27,10 +27,10 @@ describe("Ciritical thoughts component tests", () => {
     );
 
     //act
-    getSavedCriticalThoughts();
+    getFromLocalStorage(criticalThoughtsKey);
 
     //assert
     expect(getItemSpy).toHaveBeenCalledWith(criticalThoughtsKey);
-    expect(getSavedCriticalThoughts()).toStrictEqual(savedText);
+    expect(getFromLocalStorage(criticalThoughtsKey)).toStrictEqual(savedText);
   });
 });
