@@ -1,5 +1,5 @@
 import { FormEvent, useState } from "react";
-import { saveCriticalThoughts } from "../helpers/saveToLocalStorage";
+import { saveToLocalStorage } from "../helpers/saveToLocalStorage";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
 interface IPropsCriticThoughtsComponent {
@@ -19,7 +19,7 @@ export const CriticThoughtsComponent = ({
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    saveCriticalThoughts(userInput);
+    saveToLocalStorage("criticalThoughts", userInput);
     setUserInput("");
   };
   return (
