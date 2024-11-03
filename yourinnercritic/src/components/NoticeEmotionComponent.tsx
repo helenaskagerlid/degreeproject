@@ -1,3 +1,4 @@
+import { handleArrowClick } from "../helpers/handleArrowClick";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
 interface INoticeEmotionComponentProps {
@@ -9,9 +10,6 @@ export const NoticeEmotionComponent = ({
   noticeEmotionRef,
   setStepFour,
 }: INoticeEmotionComponentProps) => {
-  const handleClick = () => {
-    setStepFour(true);
-  };
   return (
     <>
       <section ref={noticeEmotionRef}>
@@ -26,7 +24,11 @@ export const NoticeEmotionComponent = ({
           src="/noticeemotionimg.jpg"
           alt=""
         />
-        <button onClick={handleClick}>
+        <button
+          onClick={() => {
+            handleArrowClick(setStepFour);
+          }}
+        >
           {" "}
           <ScrollArrowComponent />
         </button>

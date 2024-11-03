@@ -1,13 +1,16 @@
 import { FormEvent, useState } from "react";
 import { saveToLocalStorage } from "../helpers/saveToLocalStorage";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
+import { handleArrowClick } from "../helpers/handleArrowClick";
 
 interface ICriticNameComponentProps {
   criticNameRef: React.RefObject<HTMLElement>;
+  setStepSix: (value: boolean) => void;
 }
 
 export const CriticNameComponent = ({
   criticNameRef,
+  setStepSix,
 }: ICriticNameComponentProps) => {
   const [userInput, setUserInput] = useState("");
   const handleSubmit = (e: FormEvent) => {
@@ -15,6 +18,7 @@ export const CriticNameComponent = ({
     saveToLocalStorage("innerCriticName", userInput);
     setUserInput("");
   };
+
   return (
     <>
       <section ref={criticNameRef}>
@@ -37,7 +41,11 @@ export const CriticNameComponent = ({
           negative thought and then reply to yourself "Oh, Hi Klas-Göran (insert
           your choosen inner critics name), are you here again?"
         </p>
-        <button>
+        <button
+          onClick={() => {
+            handleArrowClick(setStepSix);
+          }}
+        >
           {" "}
           <ScrollArrowComponent />
         </button>

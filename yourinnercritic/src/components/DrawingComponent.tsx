@@ -1,9 +1,13 @@
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
-export const DrawingComponent = () => {
+interface IDrawingComponentProps {
+  drawingRef: React.RefObject<HTMLElement>;
+}
+
+export const DrawingComponent = ({ drawingRef }: IDrawingComponentProps) => {
   return (
     <>
-      <section>
+      <section ref={drawingRef}>
         <h2>Step 6: Draw your inner critic</h2>
         <img
           className="draw-inner-critic-img"

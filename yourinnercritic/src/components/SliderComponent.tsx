@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
+import { handleArrowClick } from "../helpers/handleArrowClick";
 
 interface IPropsSliderComponent {
   sliderRef: React.RefObject<HTMLElement>;
@@ -14,10 +15,6 @@ export const SliderComponent = ({
 
   const handleSliderChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSliderValue(parseInt(event.target.value));
-  };
-
-  const handleClick = () => {
-    setStepThree(true);
   };
 
   return (
@@ -50,7 +47,11 @@ export const SliderComponent = ({
         <p id="sliderValue" className="slider-value">
           {sliderValue}
         </p>
-        <button onClick={handleClick}>
+        <button
+          onClick={() => {
+            handleArrowClick(setStepThree);
+          }}
+        >
           {" "}
           <ScrollArrowComponent />
         </button>
