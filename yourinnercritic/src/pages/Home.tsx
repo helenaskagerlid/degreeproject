@@ -5,6 +5,7 @@ import { CriticThoughtsComponent } from "../components/CriticThoughtsComponent";
 import { SliderComponent } from "../components/SliderComponent";
 import { NoticeEmotionComponent } from "../components/NoticeEmotionComponent";
 import { scrollToNextStep } from "../helpers/scrollToNextStep";
+import { CriticNameComponent } from "../components/CriticNameComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -12,11 +13,13 @@ export const Home = () => {
   const [stepTwo, setStepTwo] = useState<boolean>(false);
   const [stepThree, setStepThree] = useState<boolean>(false);
   const [stepFour, setStepFour] = useState<boolean>(false);
+  const [stepFive, setStepFive] = useState<boolean>(false);
   const fetchedImageRef = useRef<HTMLElement>(null);
   const criticThoughtsRef = useRef<HTMLElement>(null);
   const sliderRef = useRef<HTMLElement>(null);
   const noticeEmotionRef = useRef<HTMLElement>(null);
   const emotionImageRef = useRef<HTMLElement>(null);
+  const criticNameRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (fetchedPhotos && fetchedImageRef) {
@@ -44,7 +47,12 @@ export const Home = () => {
         scrollToNextStep(emotionImageRef.current!);
       }, 200);
     }
-  }, [fetchedPhotos, stepOne, stepTwo, stepThree, stepFour]);
+    if (stepFive && criticNameRef.current) {
+      setTimeout(() => {
+        scrollToNextStep(criticNameRef.current!);
+      }, 200);
+    }
+  }, [fetchedPhotos, stepOne, stepTwo, stepThree, stepFour, stepFive]);
 
   return (
     <>
@@ -70,8 +78,10 @@ export const Home = () => {
           setFetchedPhotos={setFetchedPhotos}
           emotionImageRef={emotionImageRef}
           fetchedImageRef={fetchedImageRef}
+          setStepFive={setStepFive}
         />
       )}
+      {stepFive && <CriticNameComponent criticNameRef={criticNameRef} />}
     </>
   );
 };
