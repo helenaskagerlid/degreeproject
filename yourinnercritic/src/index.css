@@ -127,7 +127,8 @@ a {
 .critic-thoughts-img,
 .intro-emotion-image,
 .notice-emotion-img,
-.critic-name-image {
+.critic-name-image,
+.draw-inner-critic-img {
   max-height: 500px;
   width: 50%;
   object-fit: cover;
