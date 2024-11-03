@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import { IHits } from "../models/IPixabayResponse";
 import { getPhotos } from "../service/getPhotosService";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
+import { handleArrowClick } from "../helpers/handleArrowClick";
 
 interface IEmotionImageComponentProps {
   emotionImageRef: React.RefObject<HTMLElement>;
@@ -29,9 +30,6 @@ export const EmotionImageComponent = ({
     setFetchedPhotos(true);
   };
 
-  const handleClick = () => {
-    setStepFive(true);
-  };
   return (
     <>
       <section ref={emotionImageRef}>
@@ -69,7 +67,11 @@ export const EmotionImageComponent = ({
             ))}
           </section>
         )}
-        <button onClick={handleClick}>
+        <button
+          onClick={() => {
+            handleArrowClick(setStepFive);
+          }}
+        >
           <ScrollArrowComponent />
         </button>
       </section>
