@@ -138,3 +138,12 @@ a {
   font-size: 0.9em;
   font-style: italic;
 }
+
+.animation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: min(100% - 48px, 900px);
+  margin-inline: auto;
+  padding-block: 60px;
+}

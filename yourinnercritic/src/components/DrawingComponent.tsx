@@ -1,10 +1,15 @@
+import { handleArrowClick } from "../helpers/handleArrowClick";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
 interface IDrawingComponentProps {
   drawingRef: React.RefObject<HTMLElement>;
+  setStepSeven: (value: boolean) => void;
 }
 
-export const DrawingComponent = ({ drawingRef }: IDrawingComponentProps) => {
+export const DrawingComponent = ({
+  drawingRef,
+  setStepSeven,
+}: IDrawingComponentProps) => {
   return (
     <>
       <section ref={drawingRef}>
@@ -15,7 +20,11 @@ export const DrawingComponent = ({ drawingRef }: IDrawingComponentProps) => {
           alt=""
         />
         <p>Intstructions about drawing the inner critic</p>
-        <button>
+        <button
+          onClick={() => {
+            handleArrowClick(setStepSeven);
+          }}
+        >
           <ScrollArrowComponent />
         </button>
       </section>
