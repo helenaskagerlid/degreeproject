@@ -24,7 +24,7 @@ export const CompareThoughtsComponent = ({
   }, []);
   return (
     <>
-      <section ref={compareThoughtsRef}>
+      <section className="compare-thoughts-section" ref={compareThoughtsRef}>
         <h2>Step 8: Check in with your thoughts</h2>
         <p>
           You critic <strong>{innerCriticName}</strong> have been having some
