@@ -8,6 +8,7 @@ import { CriticNameComponent } from "../components/CriticNameComponent";
 import { DrawingComponent } from "../components/DrawingComponent";
 import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
 import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
+import { CompareThoughtsComponent } from "../components/CompareThoughtsComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -18,6 +19,7 @@ export const Home = () => {
   const [stepFive, setStepFive] = useState<boolean>(false);
   const [stepSix, setStepSix] = useState<boolean>(false);
   const [stepSeven, setStepSeven] = useState<boolean>(false);
+  const [stepEight, setStepEight] = useState<boolean>(false);
   const fetchedImageRef = useRef<HTMLElement>(null);
   const criticThoughtsRef = useRef<HTMLElement>(null);
   const sliderRef = useRef<HTMLElement>(null);
@@ -26,6 +28,7 @@ export const Home = () => {
   const criticNameRef = useRef<HTMLElement>(null);
   const drawingRef = useRef<HTMLElement>(null);
   const animationRef = useRef<HTMLElement>(null);
+  const compareThoughtsRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (stepOne && criticThoughtsRef.current) {
@@ -68,6 +71,11 @@ export const Home = () => {
         scrollToNextStep(animationRef.current!);
       }, 200);
     }
+    if (stepEight && compareThoughtsRef) {
+      setTimeout(() => {
+        scrollToNextStep(compareThoughtsRef.current!);
+      }, 200);
+    }
   }, [
     fetchedPhotos,
     stepOne,
@@ -77,6 +85,7 @@ export const Home = () => {
     stepFive,
     stepSix,
     stepSeven,
+    stepEight,
   ]);
 
   return (
@@ -118,7 +127,15 @@ export const Home = () => {
       {stepSix && (
         <DrawingComponent drawingRef={drawingRef} setStepSeven={setStepSeven} />
       )}
-      {stepSeven && <DrawingAnimationComponent animationRef={animationRef} />}
+      {stepSeven && (
+        <DrawingAnimationComponent
+          animationRef={animationRef}
+          setStepEight={setStepEight}
+        />
+      )}
+      {stepEight && (
+        <CompareThoughtsComponent compareThoughtsRef={compareThoughtsRef} />
+      )}
     </>
   );
 };
