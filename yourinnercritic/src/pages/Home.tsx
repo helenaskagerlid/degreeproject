@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { EmotionImageComponent } from "../components/EmotionImageComponent";
 import { IntroComponent } from "../components/IntroComponent";
 import { CriticThoughtsComponent } from "../components/CriticThoughtsComponent";
-import { SliderComponent } from "../components/SliderComponent";
 import { NoticeEmotionComponent } from "../components/NoticeEmotionComponent";
 import { scrollToNextStep } from "../helpers/scrollToNextStep";
 import { CriticNameComponent } from "../components/CriticNameComponent";
 import { DrawingComponent } from "../components/DrawingComponent";
 import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
+import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -28,11 +28,6 @@ export const Home = () => {
   const animationRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (fetchedPhotos && fetchedImageRef) {
-      setTimeout(() => {
-        scrollToNextStep(fetchedImageRef.current!);
-      }, 300);
-    }
     if (stepOne && criticThoughtsRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticThoughtsRef.current!);
@@ -53,6 +48,11 @@ export const Home = () => {
         scrollToNextStep(emotionImageRef.current!);
       }, 200);
     }
+    if (fetchedPhotos && fetchedImageRef) {
+      setTimeout(() => {
+        scrollToNextStep(fetchedImageRef.current!);
+      }, 300);
+    }
     if (stepFive && criticNameRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticNameRef.current!);
@@ -68,7 +68,16 @@ export const Home = () => {
         scrollToNextStep(animationRef.current!);
       }, 200);
     }
-  }, [fetchedPhotos, stepOne, stepTwo, stepThree, stepFour, stepFive, stepSix]);
+  }, [
+    fetchedPhotos,
+    stepOne,
+    stepTwo,
+    stepThree,
+    stepFour,
+    stepFive,
+    stepSix,
+    stepSeven,
+  ]);
 
   return (
     <>
@@ -80,7 +89,10 @@ export const Home = () => {
         />
       )}
       {stepTwo && (
-        <SliderComponent setStepThree={setStepThree} sliderRef={sliderRef} />
+        <CheckThoughtsComponent
+          setStepThree={setStepThree}
+          sliderRef={sliderRef}
+        />
       )}
       {stepThree && (
         <NoticeEmotionComponent

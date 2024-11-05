@@ -1,3 +1,5 @@
+import { FormEvent, useState } from "react";
+import { saveToLocalStorage } from "../helpers/saveToLocalStorage";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
 
 interface IDrawingAnimationComponentProps {
@@ -7,6 +9,12 @@ interface IDrawingAnimationComponentProps {
 export const DrawingAnimationComponent = ({
   animationRef,
 }: IDrawingAnimationComponentProps) => {
+  const [userInput, setUserInput] = useState("");
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    saveToLocalStorage("savedAnimation", userInput);
+  };
   return (
     <>
       <section className="animation-section" ref={animationRef}>
@@ -16,6 +24,18 @@ export const DrawingAnimationComponent = ({
           width="1100px"
           height="700px"
         ></iframe>
+        <h3>
+          Hey, before you go to the next step, remember to save the link for
+          your favourite animation and put it below!
+        </h3>
+        <form onSubmit={handleSubmit}>
+          <input
+            type="text"
+            value={userInput}
+            onChange={(e) => setUserInput(e.target.value)}
+          />
+          <button>Save</button>
+        </form>
         <button>
           {" "}
           <ScrollArrowComponent />
