@@ -1,13 +1,16 @@
 import { FormEvent, useState } from "react";
 import { saveToLocalStorage } from "../helpers/saveToLocalStorage";
 import { ScrollArrowComponent } from "./ScrollArrowComponent";
+import { handleArrowClick } from "../helpers/handleArrowClick";
 
 interface IDrawingAnimationComponentProps {
   animationRef: React.RefObject<HTMLElement>;
+  setStepEight: (value: boolean) => void;
 }
 
 export const DrawingAnimationComponent = ({
   animationRef,
+  setStepEight,
 }: IDrawingAnimationComponentProps) => {
   const [userInput, setUserInput] = useState("");
 
@@ -36,7 +39,11 @@ export const DrawingAnimationComponent = ({
           />
           <button>Save</button>
         </form>
-        <button>
+        <button
+          onClick={() => {
+            handleArrowClick(setStepEight);
+          }}
+        >
           {" "}
           <ScrollArrowComponent />
         </button>
