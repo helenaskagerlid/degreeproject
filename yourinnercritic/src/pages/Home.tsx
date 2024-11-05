@@ -9,6 +9,7 @@ import { DrawingComponent } from "../components/DrawingComponent";
 import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
 import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
 import { CompareThoughtsComponent } from "../components/CompareThoughtsComponent";
+import { ClosingComponent } from "../components/ClosingComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -88,6 +89,17 @@ export const Home = () => {
     stepEight,
   ]);
 
+  const startOver = () => {
+    setStepOne(false);
+    setStepTwo(false);
+    setStepThree(false);
+    setStepFour(false);
+    setStepFive(false);
+    setStepSix(false);
+    setStepSeven(false);
+    setStepEight(false);
+  };
+
   return (
     <>
       <IntroComponent setStepOne={setStepOne} />
@@ -136,6 +148,7 @@ export const Home = () => {
       {stepEight && (
         <CompareThoughtsComponent compareThoughtsRef={compareThoughtsRef} />
       )}
+      <ClosingComponent startOver={startOver} />
     </>
   );
 };
