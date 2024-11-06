@@ -49,11 +49,11 @@ export const VoiceTheThoughtComponent = ({
           Your next step is to record saying these words in a silly voice.
           Really imagine that it is the animated {innerCriticName} who is saying
           this, and give it an exaggerative type of voice that give you a fun
-          time. The goal here is to make the words feel even more distant. Some
-          inspiration of types of voices you can try out: American, swenglish, a
-          not so impressed teenager, a cartoon character.. BONUS: After you have
-          finished recording you can even try to add a fun chipmunk or
-          mountaintroll effect!
+          time. The goal here is to make the words feel even more distant, but
+          in a goofy way. Some inspiration of types of voices you can try out:
+          American, swenglish, a not so impressed teenager, a cartoon
+          character.. BONUS: After you have finished recording you can even try
+          to add a fun chipmunk or mountaintroll effect!
         </p>
         <ChangeVoiceComponent />
         <p>
