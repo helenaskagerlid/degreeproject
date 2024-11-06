@@ -21,7 +21,7 @@ export const NoticeEmotionComponent = ({
         </p>
         <img
           className="notice-emotion-img"
-          src="/noticeemotionimg.jpg"
+          src="/noticeemotionimg.webp"
           alt=""
         />
         <button
