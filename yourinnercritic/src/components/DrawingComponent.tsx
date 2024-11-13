@@ -16,7 +16,7 @@ export const DrawingComponent = ({
         <h2>Step 6: Draw your inner critic</h2>
         <img
           className="draw-inner-critic-img animation-img"
-          src="/drawInnerCriticImg.jpg"
+          src="/drawInnerCriticImg.webp"
           width={6000}
           height={4000}
           alt="a child writing a cartoon character on a paper on the floor"
