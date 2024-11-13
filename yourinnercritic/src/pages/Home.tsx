@@ -79,6 +79,11 @@ export const Home = () => {
         scrollToNextStep(voiceTheThoughtRef.current!);
       }, 800);
     }
+    if (stepNine && closingRef) {
+      setTimeout(() => {
+        scrollToNextStep(closingRef.current!);
+      }, 800);
+    }
   }, [
     fetchedPhotos,
     stepOne,
@@ -89,6 +94,7 @@ export const Home = () => {
     stepSix,
     stepSeven,
     stepEight,
+    stepNine,
   ]);
 
   const startOver = () => {

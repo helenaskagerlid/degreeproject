@@ -12,7 +12,7 @@ export const NoticeEmotionComponent = ({
 }: INoticeEmotionComponentProps) => {
   return (
     <>
-      <section ref={noticeEmotionRef}>
+      <section ref={noticeEmotionRef} className="notice-emotion-section">
         <img
           className="notice-emotion-img animation-img"
           width={4000}

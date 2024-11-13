@@ -12,7 +12,7 @@ export const DrawingComponent = ({
 }: IDrawingComponentProps) => {
   return (
     <>
-      <section ref={drawingRef}>
+      <section className="drawing-section" ref={drawingRef}>
         <h2>Step 6: Draw your inner critic</h2>
         <img
           className="draw-inner-critic-img animation-img"
