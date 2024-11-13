@@ -17,7 +17,7 @@ export const NoticeEmotionComponent = ({
           className="notice-emotion-img animation-img"
           width={4000}
           height={4364}
-          src="/noticeemotionimg3.webp"
+          src="/noticeemotionimg.webp"
           alt="A woman holding her hand on the chin, looking up with a thinking expressing"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
         />
