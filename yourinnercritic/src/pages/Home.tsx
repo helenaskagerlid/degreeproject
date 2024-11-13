@@ -8,8 +8,8 @@ import { CriticNameComponent } from "../components/CriticNameComponent";
 import { DrawingComponent } from "../components/DrawingComponent";
 import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
 import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
-import { CompareThoughtsComponent } from "../components/CompareThoughtsComponent";
 // import { ClosingComponent } from "../components/ClosingComponent";
+import { VoiceTheThoughtComponent } from "../components/VoiceTheThoughtComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -29,7 +29,7 @@ export const Home = () => {
   const criticNameRef = useRef<HTMLElement>(null);
   const drawingRef = useRef<HTMLElement>(null);
   const animationRef = useRef<HTMLElement>(null);
-  const compareThoughtsRef = useRef<HTMLElement>(null);
+  const voiceTheThoughtRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (stepOne && criticThoughtsRef.current) {
@@ -72,9 +72,9 @@ export const Home = () => {
         scrollToNextStep(animationRef.current!);
       }, 800);
     }
-    if (stepEight && compareThoughtsRef) {
+    if (stepEight && voiceTheThoughtRef) {
       setTimeout(() => {
-        scrollToNextStep(compareThoughtsRef.current!);
+        scrollToNextStep(voiceTheThoughtRef.current!);
       }, 800);
     }
   }, [
@@ -146,7 +146,7 @@ export const Home = () => {
         />
       )}
       {stepEight && (
-        <CompareThoughtsComponent compareThoughtsRef={compareThoughtsRef} />
+        <VoiceTheThoughtComponent voiceTheThoughtRef={voiceTheThoughtRef} />
       )}
       {/* <ClosingComponent startOver={startOver} /> */}
     </>

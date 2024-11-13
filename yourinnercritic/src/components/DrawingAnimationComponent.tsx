@@ -13,11 +13,23 @@ export const DrawingAnimationComponent = ({
   setStepEight,
 }: IDrawingAnimationComponentProps) => {
   const [userInput, setUserInput] = useState("");
+  const [saved, setSaved] = useState<boolean>(false);
+  const [notSaved, setNotSaved] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     saveToLocalStorage("savedAnimation", userInput);
+
+    if (userInput) {
+      setSaved(true);
+      setNotSaved(false);
+    } else {
+      setSaved(false);
+      setNotSaved(true);
+    }
+    setUserInput("");
   };
+
   return (
     <>
       <section className="animation-section" ref={animationRef}>
@@ -39,6 +51,8 @@ export const DrawingAnimationComponent = ({
             onChange={(e) => setUserInput(e.target.value)}
           />
           <button>Save</button>
+          {saved && <p>The animation was saved successfully</p>}
+          {notSaved && <p>You have to add a link to your animation</p>}
         </form>
         <button
           onClick={() => {
