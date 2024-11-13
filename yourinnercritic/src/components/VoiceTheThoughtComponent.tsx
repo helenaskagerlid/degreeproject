@@ -3,13 +3,16 @@ import { ScrollArrowComponent } from "./ScrollArrowComponent";
 import { SliderComponent } from "./SliderComponent";
 import { getFromLocalStorage } from "../helpers/saveToLocalStorage";
 import { ChangeVoiceComponent } from "./ChangeVoiceComponent";
+import { handleArrowClick } from "../helpers/handleArrowClick";
 
 interface ICompareThoughtsComponentProps {
   voiceTheThoughtRef: React.RefObject<HTMLElement>;
+  setStepNine: (value: boolean) => void;
 }
 
 export const VoiceTheThoughtComponent = ({
   voiceTheThoughtRef,
+  setStepNine,
 }: ICompareThoughtsComponentProps) => {
   const [innerCriticName, setInnerCriticName] = useState("");
   const [criticalThoughts, setCriticalThoughts] = useState("");
@@ -62,8 +65,11 @@ export const VoiceTheThoughtComponent = ({
           ehrm... situations?
         </p>
         <SliderComponent />
-        <button>
-          {" "}
+        <button
+          onClick={() => {
+            handleArrowClick(setStepNine);
+          }}
+        >
           <ScrollArrowComponent />
         </button>
       </section>

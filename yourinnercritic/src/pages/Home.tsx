@@ -8,7 +8,7 @@ import { CriticNameComponent } from "../components/CriticNameComponent";
 import { DrawingComponent } from "../components/DrawingComponent";
 import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
 import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
-// import { ClosingComponent } from "../components/ClosingComponent";
+import { ClosingComponent } from "../components/ClosingComponent";
 import { VoiceTheThoughtComponent } from "../components/VoiceTheThoughtComponent";
 
 export const Home = () => {
@@ -21,6 +21,7 @@ export const Home = () => {
   const [stepSix, setStepSix] = useState<boolean>(false);
   const [stepSeven, setStepSeven] = useState<boolean>(false);
   const [stepEight, setStepEight] = useState<boolean>(false);
+  const [stepNine, setStepNine] = useState<boolean>(false);
   const fetchedImageRef = useRef<HTMLElement>(null);
   const criticThoughtsRef = useRef<HTMLElement>(null);
   const sliderRef = useRef<HTMLElement>(null);
@@ -30,6 +31,7 @@ export const Home = () => {
   const drawingRef = useRef<HTMLElement>(null);
   const animationRef = useRef<HTMLElement>(null);
   const voiceTheThoughtRef = useRef<HTMLElement>(null);
+  const closingRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     if (stepOne && criticThoughtsRef.current) {
@@ -89,16 +91,17 @@ export const Home = () => {
     stepEight,
   ]);
 
-  // const startOver = () => {
-  //   setStepOne(false);
-  //   setStepTwo(false);
-  //   setStepThree(false);
-  //   setStepFour(false);
-  //   setStepFive(false);
-  //   setStepSix(false);
-  //   setStepSeven(false);
-  //   setStepEight(false);
-  // };
+  const startOver = () => {
+    setStepOne(false);
+    setStepTwo(false);
+    setStepThree(false);
+    setStepFour(false);
+    setStepFive(false);
+    setStepSix(false);
+    setStepSeven(false);
+    setStepEight(false);
+    setStepNine(false);
+  };
 
   return (
     <>
@@ -146,9 +149,14 @@ export const Home = () => {
         />
       )}
       {stepEight && (
-        <VoiceTheThoughtComponent voiceTheThoughtRef={voiceTheThoughtRef} />
+        <VoiceTheThoughtComponent
+          voiceTheThoughtRef={voiceTheThoughtRef}
+          setStepNine={setStepNine}
+        />
       )}
-      {/* <ClosingComponent startOver={startOver} /> */}
+      {stepNine && (
+        <ClosingComponent startOver={startOver} closingRef={closingRef} />
+      )}
     </>
   );
 };
