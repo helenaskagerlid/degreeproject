@@ -35,10 +35,12 @@ export const DrawingAnimationComponent = ({
       <section className="animation-section" ref={animationRef}>
         <h2>Step 7: Animate your inner critic</h2>
         <iframe
+          className="animation-image"
           src="https://sketch.metademolab.com/canvas"
           width="1100px"
           height="700px"
           loading="lazy"
+          onLoad={(e) => e.currentTarget.classList.add("is-visible")}
         ></iframe>
         <h3>
           Hey, before you go to the next step, remember to save the link for

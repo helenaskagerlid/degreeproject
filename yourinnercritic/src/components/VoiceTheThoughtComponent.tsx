@@ -41,7 +41,13 @@ export const VoiceTheThoughtComponent = ({
             <p>The one and only {innerCriticName} </p>
             <span className="material-symbols-outlined">arrow_downward</span>
             <br /> <br />
-            <iframe src={savedAnimation} width={450} height={480}></iframe>
+            <iframe
+              className="animation-img"
+              src={savedAnimation}
+              width={450}
+              height={480}
+              onLoad={(e) => e.currentTarget.classList.add("is-visible")}
+            ></iframe>
           </>
         )}
         <p>

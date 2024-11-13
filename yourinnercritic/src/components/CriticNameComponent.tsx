@@ -24,11 +24,12 @@ export const CriticNameComponent = ({
       <section ref={criticNameRef}>
         <h2>Step 5: Choose a name for your inner critic</h2>
         <img
-          className="critic-name-image"
+          className="critic-name-image animation-img"
           width={5335}
           height={3557}
           src="/criticNameImage.jpg"
           alt="A blurry image of a slate with different names written on it"
+          onLoad={(e) => e.currentTarget.classList.add("is-visible")}
           loading="lazy"
         />
         <p>Now take a moment to give your inner critic a name.</p>
