@@ -75,6 +75,7 @@ header {
   height: 120px;
   max-width: 100vw;
   margin: 0;
+  background-color: #38263f;
   padding-left: 20px;
   padding-right: 20px;
   display: flex;
@@ -178,4 +179,19 @@ a {
   max-width: min(100% - 48px, 900px);
   margin-inline: auto;
   padding-block: 60px;
+}
+
+.intro-component-section,
+.critic-thoughts-section,
+.slider-section,
+.critic-name-section,
+.animation-section,
+.drawing-section,
+.emotion-image-section,
+.notice-emotion-section {
+  padding-block: 30px;
+}
+
+.closing-section {
+  padding-block: 175px;
 }

@@ -21,7 +21,7 @@ export const CriticNameComponent = ({
 
   return (
     <>
-      <section ref={criticNameRef}>
+      <section className="critic-name-section" ref={criticNameRef}>
         <h2>Step 5: Choose a name for your inner critic</h2>
         <img
           className="critic-name-image animation-img"

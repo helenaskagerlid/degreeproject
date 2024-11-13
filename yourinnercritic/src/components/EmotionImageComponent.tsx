@@ -32,7 +32,7 @@ export const EmotionImageComponent = ({
 
   return (
     <>
-      <section ref={emotionImageRef}>
+      <section className="emotion-image-section" ref={emotionImageRef}>
         <h2>Step 4: Find an image to represent the feeling</h2>
         <img
           className="intro-emotion-image animation-img"
