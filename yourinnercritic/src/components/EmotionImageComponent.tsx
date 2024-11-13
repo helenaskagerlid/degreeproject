@@ -34,7 +34,14 @@ export const EmotionImageComponent = ({
     <>
       <section ref={emotionImageRef}>
         <h2>Step 4: Find an image to represent the feeling</h2>
-        <img className="intro-emotion-image" src="/introemotionimage.jpg" />
+        <img
+          className="intro-emotion-image"
+          width={1280}
+          height={853}
+          src="/introemotionimage.jpg"
+          alt="A woman sitting on the street with a camera on a stand in front of her"
+          loading="lazy"
+        />
         <p>
           Your next step is to write the emotion you notice in step three in the
           box below, click search and choose an image that you think represent

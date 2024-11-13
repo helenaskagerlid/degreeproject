@@ -9,7 +9,7 @@ export const IntroComponent = ({ setStepOne }: IPropsIntroComponent) => {
   return (
     <>
       <section className="intro-component-section">
-        <img className="feelings-img" src="/feelingsimg.jpg" alt="" />
+        {/* <img className="feelings-img" src="/feelingsimg.jpg" alt="" /> */}
         <h1>Welcome to Tame Your Inner Critic</h1>
         <p>
           This site is a step-by-step guide to help you understand and work with

@@ -21,8 +21,11 @@ export const NoticeEmotionComponent = ({
         </p>
         <img
           className="notice-emotion-img"
+          width={4000}
+          height={6000}
           src="/noticeemotionimg.jpg"
-          alt=""
+          alt="A woman holding her hand on the chin, looking up with a thinking expressing"
+          loading="lazy"
         />
         <button
           onClick={() => {

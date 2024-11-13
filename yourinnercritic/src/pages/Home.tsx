@@ -9,7 +9,7 @@ import { DrawingComponent } from "../components/DrawingComponent";
 import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
 import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
 import { CompareThoughtsComponent } from "../components/CompareThoughtsComponent";
-import { ClosingComponent } from "../components/ClosingComponent";
+// import { ClosingComponent } from "../components/ClosingComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -35,47 +35,47 @@ export const Home = () => {
     if (stepOne && criticThoughtsRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticThoughtsRef.current!);
-      }, 200);
+      }, 800);
     }
     if (stepTwo && sliderRef.current) {
       setTimeout(() => {
         scrollToNextStep(sliderRef.current!);
-      }, 200);
+      }, 800);
     }
     if (stepThree && noticeEmotionRef.current) {
       setTimeout(() => {
         scrollToNextStep(noticeEmotionRef.current!);
-      }, 200);
+      }, 800);
     }
     if (stepFour && emotionImageRef.current) {
       setTimeout(() => {
         scrollToNextStep(emotionImageRef.current!);
-      }, 200);
+      }, 800);
     }
     if (fetchedPhotos && fetchedImageRef) {
       setTimeout(() => {
         scrollToNextStep(fetchedImageRef.current!);
-      }, 300);
+      }, 800);
     }
     if (stepFive && criticNameRef.current) {
       setTimeout(() => {
         scrollToNextStep(criticNameRef.current!);
-      }, 200);
+      }, 800);
     }
     if (stepSix && drawingRef.current) {
       setTimeout(() => {
         scrollToNextStep(drawingRef.current!);
-      }, 200);
+      }, 800);
     }
     if (stepSeven && animationRef) {
       setTimeout(() => {
         scrollToNextStep(animationRef.current!);
-      }, 200);
+      }, 800);
     }
     if (stepEight && compareThoughtsRef) {
       setTimeout(() => {
         scrollToNextStep(compareThoughtsRef.current!);
-      }, 200);
+      }, 800);
     }
   }, [
     fetchedPhotos,
@@ -89,16 +89,16 @@ export const Home = () => {
     stepEight,
   ]);
 
-  const startOver = () => {
-    setStepOne(false);
-    setStepTwo(false);
-    setStepThree(false);
-    setStepFour(false);
-    setStepFive(false);
-    setStepSix(false);
-    setStepSeven(false);
-    setStepEight(false);
-  };
+  // const startOver = () => {
+  //   setStepOne(false);
+  //   setStepTwo(false);
+  //   setStepThree(false);
+  //   setStepFour(false);
+  //   setStepFive(false);
+  //   setStepSix(false);
+  //   setStepSeven(false);
+  //   setStepEight(false);
+  // };
 
   return (
     <>
@@ -148,7 +148,7 @@ export const Home = () => {
       {stepEight && (
         <CompareThoughtsComponent compareThoughtsRef={compareThoughtsRef} />
       )}
-      <ClosingComponent startOver={startOver} />
+      {/* <ClosingComponent startOver={startOver} /> */}
     </>
   );
 };
