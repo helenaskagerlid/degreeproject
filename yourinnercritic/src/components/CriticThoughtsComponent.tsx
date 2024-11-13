@@ -46,13 +46,13 @@ export const CriticThoughtsComponent = ({
   };
   return (
     <>
-      <section ref={criticThoughtsRef}>
+      <section className="critic-thoughts-section" ref={criticThoughtsRef}>
         <img
           className="critic-thoughts-img animation-img"
           width={5464}
           height={4881}
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
-          src="/criticthoughtsimg.jpg"
+          src="/criticthoughtsimg.webp"
           alt="a dark haird head with a hand holding a thought bubble over it"
           loading="lazy"
         />

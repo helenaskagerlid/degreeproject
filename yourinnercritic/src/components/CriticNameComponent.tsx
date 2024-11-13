@@ -27,7 +27,7 @@ export const CriticNameComponent = ({
           className="critic-name-image animation-img"
           width={5335}
           height={3557}
-          src="/criticNameImage.jpg"
+          src="/criticNameImage.webp"
           alt="A blurry image of a slate with different names written on it"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
           loading="lazy"

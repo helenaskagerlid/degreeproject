@@ -38,7 +38,7 @@ export const EmotionImageComponent = ({
           className="intro-emotion-image animation-img"
           width={1280}
           height={853}
-          src="/introemotionimage.jpg"
+          src="/introemotionimage.webp"
           alt="A woman sitting on the street with a camera on a stand in front of her"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
           loading="lazy"
