@@ -38,6 +38,7 @@ export const DrawingAnimationComponent = ({
           src="https://sketch.metademolab.com/canvas"
           width="1100px"
           height="700px"
+          loading="lazy"
         ></iframe>
         <h3>
           Hey, before you go to the next step, remember to save the link for

@@ -23,7 +23,14 @@ export const CriticNameComponent = ({
     <>
       <section ref={criticNameRef}>
         <h2>Step 5: Choose a name for your inner critic</h2>
-        <img className="critic-name-image" src="/criticNameImage.jpg" alt="" />
+        <img
+          className="critic-name-image"
+          width={5335}
+          height={3557}
+          src="/criticNameImage.jpg"
+          alt="A blurry image of a slate with different names written on it"
+          loading="lazy"
+        />
         <p>Now take a moment to give your inner critic a name.</p>
         <form onSubmit={handleSubmit}>
           <input

@@ -17,7 +17,10 @@ export const DrawingComponent = ({
         <img
           className="draw-inner-critic-img"
           src="/drawInnerCriticImg.jpg"
-          alt=""
+          width={6000}
+          height={4000}
+          alt="a child writing a cartoon character on a paper on the floor"
+          loading="lazy"
         />
         <p>Intstructions about drawing the inner critic</p>
         <button

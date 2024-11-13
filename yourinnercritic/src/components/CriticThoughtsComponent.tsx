@@ -24,8 +24,11 @@ export const CriticThoughtsComponent = ({
       <section ref={criticThoughtsRef}>
         <img
           className="critic-thoughts-img"
+          width={5464}
+          height={4881}
           src="/criticthoughtsimg.jpg"
-          alt=""
+          alt="a dark haird head with a hand holding a thought bubble over it"
+          loading="lazy"
         />
         <h2>Step 1: Your inner Ciritic's Thoughts</h2>
         <p>
