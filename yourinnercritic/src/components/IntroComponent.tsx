@@ -17,7 +17,7 @@ export const IntroComponent = ({ setStepOne }: IPropsIntroComponent) => {
           situation where your inner critic was active, and follow along as we
           guide you through the process of addressing it in a new and fun way.
         </p>
-        <button id="startBtn" className="start-btn" onClick={getStarted}>
+        <button id="startBtn" className="start-btn btn" onClick={getStarted}>
           Get started
         </button>
       </section>
