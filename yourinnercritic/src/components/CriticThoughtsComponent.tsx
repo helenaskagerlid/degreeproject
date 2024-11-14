@@ -75,7 +75,7 @@ export const CriticThoughtsComponent = ({
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button>Save</button>
+          <button className="btn">Save</button>
         </form>
         <button
           onClick={() => {
