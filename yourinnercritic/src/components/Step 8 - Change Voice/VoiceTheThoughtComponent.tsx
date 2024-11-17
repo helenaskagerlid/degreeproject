@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { ScrollArrowComponent } from "./ScrollArrowComponent";
-import { SliderComponent } from "./SliderComponent";
-import { getFromLocalStorage } from "../helpers/saveToLocalStorage";
-import { ChangeVoiceComponent } from "./ChangeVoiceComponent";
-import { handleArrowClick } from "../helpers/handleArrowClick";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { SliderComponent } from "../Slider/SliderComponent";
+import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
+import { ChangeVoiceComponent } from "../ChangeVoiceComponent";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
 
 interface ICompareThoughtsComponentProps {
   voiceTheThoughtRef: React.RefObject<HTMLElement>;

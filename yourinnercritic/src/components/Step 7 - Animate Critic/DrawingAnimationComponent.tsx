@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
-import { saveToLocalStorage } from "../helpers/saveToLocalStorage";
-import { ScrollArrowComponent } from "./ScrollArrowComponent";
-import { handleArrowClick } from "../helpers/handleArrowClick";
+import { saveToLocalStorage } from "../../helpers/saveToLocalStorage";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
 
 interface IDrawingAnimationComponentProps {
   animationRef: React.RefObject<HTMLElement>;

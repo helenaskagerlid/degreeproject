@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./style.scss";
 
 export const SliderComponent = () => {
   const [sliderValue, setSliderValue] = useState<number>(0);

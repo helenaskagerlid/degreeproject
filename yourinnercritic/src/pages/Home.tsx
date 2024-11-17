@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
-import { EmotionImageComponent } from "../components/EmotionImageComponent";
-import { IntroComponent } from "../components/IntroComponent";
-import { CriticThoughtsComponent } from "../components/CriticThoughtsComponent";
-import { NoticeEmotionComponent } from "../components/NoticeEmotionComponent";
+import { EmotionImageComponent } from "../components/Step 4 - Choose Image/EmotionImageComponent";
+import { IntroComponent } from "../components/Step 0 - Intro/IntroComponent";
+import { CriticThoughtsComponent } from "../components/Step 1 - Critic thoughts/CriticThoughtsComponent";
+import { NoticeEmotionComponent } from "../components/Step 3 - Notice emotions/NoticeEmotionComponent";
 import { scrollToNextStep } from "../helpers/scrollToNextStep";
-import { CriticNameComponent } from "../components/CriticNameComponent";
-import { DrawingComponent } from "../components/DrawingComponent";
-import { DrawingAnimationComponent } from "../components/DrawingAnimationComponent";
-import { CheckThoughtsComponent } from "../components/CheckThoughtsComponent";
-import { ClosingComponent } from "../components/ClosingComponent";
-import { VoiceTheThoughtComponent } from "../components/VoiceTheThoughtComponent";
+import { CriticNameComponent } from "../components/Step 5 - Ciritc Name/CriticNameComponent";
+import { DrawingComponent } from "../components/Step 6 - Draw Critic/DrawingComponent";
+import { DrawingAnimationComponent } from "../components/Step 7 - Animate Critic/DrawingAnimationComponent";
+import { CheckThoughtsComponent } from "../components/Step 2 - Check thoughts/CheckThoughtsComponent";
+import { ClosingComponent } from "../components/Step 9 - Closing/ClosingComponent";
+import { VoiceTheThoughtComponent } from "../components/Step 8 - Change Voice/VoiceTheThoughtComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);

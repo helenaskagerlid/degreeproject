@@ -1,8 +1,8 @@
 import { FormEvent, useState } from "react";
-import { IHits } from "../models/IPixabayResponse";
-import { getPhotos } from "../service/getPhotosService";
-import { ScrollArrowComponent } from "./ScrollArrowComponent";
-import { handleArrowClick } from "../helpers/handleArrowClick";
+import { IHits } from "../../models/IPixabayResponse";
+import { getPhotos } from "../../service/getPhotosService";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
 
 interface IEmotionImageComponentProps {
   emotionImageRef: React.RefObject<HTMLElement>;
