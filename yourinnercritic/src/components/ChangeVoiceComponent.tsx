@@ -47,7 +47,7 @@ export const ChangeVoiceComponent = () => {
   };
 
   return (
-    <div>
+    <section>
       <button onClick={startRecording} disabled={isRecording}>
         Start recording
       </button>
@@ -60,6 +60,6 @@ export const ChangeVoiceComponent = () => {
       <button onClick={playMountaintroll} disabled={!player}>
         Mountaintroll
       </button>
-    </div>
+    </section>
   );
 };

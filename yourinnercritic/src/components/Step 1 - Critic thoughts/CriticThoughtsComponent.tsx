@@ -1,7 +1,7 @@
 import { FormEvent, useEffect, useRef, useState } from "react";
-import { saveToLocalStorage } from "../helpers/saveToLocalStorage";
-import { ScrollArrowComponent } from "./ScrollArrowComponent";
-import { handleArrowClick } from "../helpers/handleArrowClick";
+import { saveToLocalStorage } from "../../helpers/saveToLocalStorage";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
 
 interface IPropsCriticThoughtsComponent {
   criticThoughtsRef: React.RefObject<HTMLElement>;

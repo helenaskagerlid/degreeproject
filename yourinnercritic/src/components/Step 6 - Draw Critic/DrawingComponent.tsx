@@ -1,5 +1,5 @@
-import { handleArrowClick } from "../helpers/handleArrowClick";
-import { ScrollArrowComponent } from "./ScrollArrowComponent";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
 
 interface IDrawingComponentProps {
   drawingRef: React.RefObject<HTMLElement>;

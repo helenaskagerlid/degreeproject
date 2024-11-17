@@ -1,6 +1,6 @@
-import { ScrollArrowComponent } from "./ScrollArrowComponent";
-import { handleArrowClick } from "../helpers/handleArrowClick";
-import { SliderComponent } from "./SliderComponent";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { SliderComponent } from "../Slider/SliderComponent";
 
 interface ICheckThoughtsComponentProps {
   sliderRef: React.RefObject<HTMLElement>;
