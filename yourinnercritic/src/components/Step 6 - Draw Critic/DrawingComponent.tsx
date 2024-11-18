@@ -1,4 +1,5 @@
 import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 import { ScrollArrowComponent } from "../ScrollArrowComponent";
 
 interface IDrawingComponentProps {
@@ -10,10 +11,20 @@ export const DrawingComponent = ({
   drawingRef,
   setStepSeven,
 }: IDrawingComponentProps) => {
+  const { isVisible: isHeadingVisible, elementRef: headingRef } =
+    useVisibilityObserver<HTMLHeadingElement>();
+  const { isVisible: isTextVisible, elementRef: textRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
+
   return (
     <>
       <section className="drawing-section" ref={drawingRef}>
-        <h2>Step 6: Draw your inner critic</h2>
+        <h2
+          ref={headingRef}
+          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+        >
+          Step 6: Draw your inner critic
+        </h2>
         <img
           className="draw-inner-critic-img animation-img"
           src="/drawInnerCriticImg.webp"
@@ -23,7 +34,12 @@ export const DrawingComponent = ({
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
           loading="lazy"
         />
-        <p>Intstructions about drawing the inner critic</p>
+        <p
+          ref={textRef}
+          className={`reveal-text ${isTextVisible ? "is-visible" : ""}`}
+        >
+          Intstructions about drawing the inner critic
+        </p>
         <button
           onClick={() => {
             handleArrowClick(setStepSeven);

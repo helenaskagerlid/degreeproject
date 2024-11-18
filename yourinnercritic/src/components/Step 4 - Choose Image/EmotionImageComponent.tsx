@@ -3,6 +3,7 @@ import { IHits } from "../../models/IPixabayResponse";
 import { getPhotos } from "../../service/getPhotosService";
 import { ScrollArrowComponent } from "../ScrollArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 
 interface IEmotionImageComponentProps {
   emotionImageRef: React.RefObject<HTMLElement>;
@@ -21,6 +22,10 @@ export const EmotionImageComponent = ({
 }: IEmotionImageComponentProps) => {
   const [myPhotos, setMyPhotos] = useState<IHits[]>([]);
   const [userInput, setUserInput] = useState("");
+  const { isVisible: isHeadingVisible, elementRef: headingRef } =
+    useVisibilityObserver<HTMLHeadingElement>();
+  const { isVisible: isTextVisible, elementRef: textRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -33,7 +38,12 @@ export const EmotionImageComponent = ({
   return (
     <>
       <section className="emotion-image-section" ref={emotionImageRef}>
-        <h2>Step 4: Find an image to represent the feeling</h2>
+        <h2
+          ref={headingRef}
+          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+        >
+          Step 4: Find an image to represent the feeling
+        </h2>
         <img
           className="intro-emotion-image animation-img"
           width={1280}
@@ -43,14 +53,15 @@ export const EmotionImageComponent = ({
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
           loading="lazy"
         />
-        <p>
+        <p
+          ref={textRef}
+          className={`reveal-text ${isTextVisible ? "is-visible" : ""}`}
+        >
           Your next step is to write the emotion you notice in step three in the
           box below, click search and choose an image that you think represent
-          how you are feeling
-        </p>{" "}
-        <p>
-          This is helpful because it visualize the emotion outside of your body
-          and helps the brain to get some distance to the emotion
+          how you are feeling. This is helpful because it visualize the emotion
+          outside of your body and helps the brain to get some distance to the
+          emotion
         </p>
         <form onSubmit={handleSubmit}>
           <input
