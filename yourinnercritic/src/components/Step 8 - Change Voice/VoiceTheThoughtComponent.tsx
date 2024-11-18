@@ -4,6 +4,7 @@ import { SliderComponent } from "../Slider/SliderComponent";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
 import { ChangeVoiceComponent } from "../ChangeVoiceComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 
 interface ICompareThoughtsComponentProps {
   voiceTheThoughtRef: React.RefObject<HTMLElement>;
@@ -17,6 +18,18 @@ export const VoiceTheThoughtComponent = ({
   const [innerCriticName, setInnerCriticName] = useState("");
   const [criticalThoughts, setCriticalThoughts] = useState("");
   const [savedAnimation, setSavedAnimation] = useState("");
+  const { isVisible: isHeadingVisible, elementRef: headingRef } =
+    useVisibilityObserver<HTMLHeadingElement>();
+  const { isVisible: isTextVisible, elementRef: textRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
+  const { isVisible: isSecondTextVisible, elementRef: secondTextRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
+  const { isVisible: isThirdTextVisible, elementRef: thirdTextRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
+  const { isVisible: isFourthTextVisible, elementRef: fourthTextRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
+  const { isVisible: isFifthTextVisible, elementRef: fifthTextRef } =
+    useVisibilityObserver<HTMLParagraphElement>();
 
   useEffect(() => {
     const fetchedName = getFromLocalStorage("innerCriticName");
@@ -29,8 +42,16 @@ export const VoiceTheThoughtComponent = ({
   return (
     <>
       <section className="compare-thoughts-section" ref={voiceTheThoughtRef}>
-        <h2>Step 8: Voice the thoughts</h2>
-        <p>
+        <h2
+          ref={headingRef}
+          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+        >
+          Step 8: Voice the thoughts
+        </h2>
+        <p
+          ref={textRef}
+          className={`reveal-text ${isTextVisible ? "is-visible" : ""}`}
+        >
           You critic <strong>{innerCriticName}</strong> have been having some
           old thoughts
         </p>
@@ -38,11 +59,20 @@ export const VoiceTheThoughtComponent = ({
         {savedAnimation && (
           <>
             {" "}
-            <p>The one and only {innerCriticName} </p>
+            <p
+              ref={secondTextRef}
+              className={`text-reveal ${
+                isSecondTextVisible ? "is-visible" : ""
+              }`}
+            >
+              The one and only {innerCriticName}{" "}
+            </p>
             <span className="material-symbols-outlined">arrow_downward</span>
             <br /> <br />
             <iframe
-              className="animation-img"
+              className={`animation-img text-reveal ${
+                isSecondTextVisible ? "is-visible" : ""
+              }`}
               src={savedAnimation}
               width={450}
               height={480}
@@ -50,11 +80,17 @@ export const VoiceTheThoughtComponent = ({
             ></iframe>
           </>
         )}
-        <p>
+        <p
+          ref={thirdTextRef}
+          className={`reveal-text ${isThirdTextVisible ? "is-visible" : ""}`}
+        >
           The thoughts in question: "Me, <strong>{innerCriticName}</strong>,
           have been thinking: '{criticalThoughts}'"
         </p>
-        <p>
+        <p
+          ref={fourthTextRef}
+          className={`reveal-text ${isFourthTextVisible ? "is-visible" : ""}`}
+        >
           Your next step is to record saying these words in a silly voice.
           Really imagine that it is the animated {innerCriticName} who is saying
           this, and give it an exaggerative type of voice that give you a fun
@@ -65,7 +101,10 @@ export const VoiceTheThoughtComponent = ({
           to add a fun chipmunk or mountaintroll effect!
         </p>
         <ChangeVoiceComponent />
-        <p>
+        <p
+          ref={fifthTextRef}
+          className={`reveal-text ${isFifthTextVisible ? "is-visible" : ""}`}
+        >
           Now the real question is, how do you feel about these old thoughts
           after seeing <strong>{innerCriticName}</strong> in some different
           ehrm... situations?

@@ -2,6 +2,7 @@ import { FormEvent, useState } from "react";
 import { saveToLocalStorage } from "../../helpers/saveToLocalStorage";
 import { ScrollArrowComponent } from "../ScrollArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 
 interface IDrawingAnimationComponentProps {
   animationRef: React.RefObject<HTMLElement>;
@@ -15,6 +16,8 @@ export const DrawingAnimationComponent = ({
   const [userInput, setUserInput] = useState("");
   const [saved, setSaved] = useState<boolean>(false);
   const [notSaved, setNotSaved] = useState<boolean>(false);
+  const { isVisible: isHeadingVisible, elementRef: headingRef } =
+    useVisibilityObserver<HTMLHeadingElement>();
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -33,7 +36,12 @@ export const DrawingAnimationComponent = ({
   return (
     <>
       <section className="animation-section" ref={animationRef}>
-        <h2>Step 7: Animate your inner critic</h2>
+        <h2
+          ref={headingRef}
+          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+        >
+          Step 7: Animate your inner critic
+        </h2>
         <iframe
           className="animation-image"
           src="https://sketch.metademolab.com/canvas"
