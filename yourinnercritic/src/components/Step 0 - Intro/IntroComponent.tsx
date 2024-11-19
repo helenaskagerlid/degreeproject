@@ -17,7 +17,6 @@ export const IntroComponent = ({ setStepOne }: IPropsIntroComponent) => {
   return (
     <>
       <section className="intro-component-section">
-        {/* <img className="feelings-img" src="/feelingsimg.jpg" alt="" /> */}
         <h1
           ref={headingRef}
           className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
