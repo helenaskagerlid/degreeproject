@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { ScrollArrowComponent } from "../ScrollArrowComponent";
-import { SliderComponent } from "../Slider/SliderComponent";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
 import { ChangeVoiceComponent } from "../ChangeVoiceComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
@@ -27,8 +26,6 @@ export const VoiceTheThoughtComponent = ({
   const { isVisible: isThirdTextVisible, elementRef: thirdTextRef } =
     useVisibilityObserver<HTMLParagraphElement>();
   const { isVisible: isFourthTextVisible, elementRef: fourthTextRef } =
-    useVisibilityObserver<HTMLParagraphElement>();
-  const { isVisible: isFifthTextVisible, elementRef: fifthTextRef } =
     useVisibilityObserver<HTMLParagraphElement>();
 
   useEffect(() => {
@@ -101,15 +98,6 @@ export const VoiceTheThoughtComponent = ({
           to add a fun chipmunk or mountaintroll effect!
         </p>
         <ChangeVoiceComponent />
-        <p
-          ref={fifthTextRef}
-          className={`reveal-text ${isFifthTextVisible ? "is-visible" : ""}`}
-        >
-          Now the real question is, how do you feel about these old thoughts
-          after seeing <strong>{innerCriticName}</strong> in some different
-          ehrm... situations?
-        </p>
-        <SliderComponent />
         <button
           onClick={() => {
             handleArrowClick(setStepNine);

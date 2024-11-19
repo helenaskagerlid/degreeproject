@@ -35,6 +35,10 @@ export const EmotionImageComponent = ({
     setFetchedPhotos(true);
   };
 
+  const saveImage = (imageLink: string) => {
+    localStorage.setItem("savedImage", JSON.stringify(imageLink));
+  };
+
   return (
     <>
       <section className="emotion-image-section" ref={emotionImageRef}>
@@ -74,8 +78,13 @@ export const EmotionImageComponent = ({
         {fetchedPhotos && (
           <section ref={fetchedImageRef}>
             {myPhotos.map((photo) => (
-              <div key={photo.id}>
-                <img src={photo.webformatURL} />
+              <div key={photo.id} id={photo.webformatURL}>
+                <img
+                  src={photo.webformatURL}
+                  onClick={() => {
+                    saveImage(photo.webformatURL);
+                  }}
+                />
                 <p>
                   Photograpger:{" "}
                   <a target="_blank" href={photo.pageURL}>
