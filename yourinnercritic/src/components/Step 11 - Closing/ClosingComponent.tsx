@@ -27,7 +27,9 @@ export const ClosingComponent = ({
         >
           Wanna do this all over with another situation?
         </h3>
-        <button onClick={startOver}>Start over</button>
+        <button className="btn" onClick={startOver}>
+          Start over
+        </button>
       </section>
     </>
   );

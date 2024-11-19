@@ -60,7 +60,7 @@ export const DrawingAnimationComponent = ({
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button>Save</button>
+          <button className="btn">Save</button>
           {saved && <p>The animation was saved successfully</p>}
           {notSaved && <p>You have to add a link to your animation</p>}
         </form>

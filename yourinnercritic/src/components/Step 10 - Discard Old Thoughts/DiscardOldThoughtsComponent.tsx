@@ -1,8 +1,18 @@
 import { useEffect, useState } from "react";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
 import "./style.scss";
+import { handleArrowClick } from "../../helpers/handleArrowClick";
+import { ScrollArrowComponent } from "../ScrollArrowComponent";
 
-export const DiscardOldThoughtsComponent = () => {
+interface IDiscardOldThoughtsComponentProps {
+  discardThoughtsRef: React.RefObject<HTMLElement>;
+  setStepEleven: (value: boolean) => void;
+}
+
+export const DiscardOldThoughtsComponent = ({
+  discardThoughtsRef,
+  setStepEleven,
+}: IDiscardOldThoughtsComponentProps) => {
   const [yourOldThoughts, setYourOldThoughts] = useState("");
   const [spin, setSpin] = useState(false);
   const [fade, setFade] = useState(false);
@@ -43,7 +53,12 @@ export const DiscardOldThoughtsComponent = () => {
 
   return (
     <>
-      <section>
+      <section ref={discardThoughtsRef}>
+        <h2>Step 10 - Throw away those old thoughts</h2>
+        <p>
+          Now it is really time to discard those old thoughts. Let's do this by
+          choosing an animation to make them disappear
+        </p>
         <div
           className={
             spin
@@ -91,6 +106,13 @@ export const DiscardOldThoughtsComponent = () => {
             </p>
           </div>
         )}
+        <button
+          onClick={() => {
+            handleArrowClick(setStepEleven);
+          }}
+        >
+          <ScrollArrowComponent />
+        </button>
       </section>
     </>
   );

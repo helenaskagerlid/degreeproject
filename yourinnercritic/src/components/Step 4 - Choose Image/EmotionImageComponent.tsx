@@ -73,7 +73,7 @@ export const EmotionImageComponent = ({
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button>Search Photos</button>
+          <button className="btn">Search Photos</button>
         </form>
         {fetchedPhotos && (
           <section ref={fetchedImageRef}>

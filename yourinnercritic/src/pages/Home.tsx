@@ -24,6 +24,8 @@ export const Home = () => {
   const [stepSeven, setStepSeven] = useState<boolean>(false);
   const [stepEight, setStepEight] = useState<boolean>(false);
   const [stepNine, setStepNine] = useState<boolean>(false);
+  const [stepTen, setStepTen] = useState<boolean>(false);
+  const [stepEleven, setStepEleven] = useState<boolean>(false);
   const fetchedImageRef = useRef<HTMLElement>(null);
   const criticThoughtsRef = useRef<HTMLElement>(null);
   const sliderRef = useRef<HTMLElement>(null);
@@ -33,6 +35,8 @@ export const Home = () => {
   const drawingRef = useRef<HTMLElement>(null);
   const animationRef = useRef<HTMLElement>(null);
   const voiceTheThoughtRef = useRef<HTMLElement>(null);
+  const oldThoughtsRef = useRef<HTMLElement>(null);
+  const discardThoughtsRef = useRef<HTMLElement>(null);
   const closingRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -81,7 +85,18 @@ export const Home = () => {
         scrollToNextStep(voiceTheThoughtRef.current!);
       }, 800);
     }
-    if (stepNine && closingRef) {
+    if (stepNine && oldThoughtsRef) {
+      setTimeout(() => {
+        scrollToNextStep(oldThoughtsRef.current!);
+      }, 800);
+    }
+
+    if (stepTen && discardThoughtsRef) {
+      setTimeout(() => {
+        scrollToNextStep(discardThoughtsRef.current!);
+      }, 800);
+    }
+    if (stepEleven && closingRef) {
       setTimeout(() => {
         scrollToNextStep(closingRef.current!);
       }, 800);
@@ -97,6 +112,8 @@ export const Home = () => {
     stepSeven,
     stepEight,
     stepNine,
+    stepTen,
+    stepEleven,
   ]);
 
   const startOver = () => {
@@ -109,6 +126,8 @@ export const Home = () => {
     setStepSeven(false);
     setStepEight(false);
     setStepNine(false);
+    setStepTen(false);
+    setStepEleven(false);
   };
 
   return (
@@ -162,9 +181,19 @@ export const Home = () => {
           setStepNine={setStepNine}
         />
       )}
-      {stepNine && <CheckOldThoughtsComponent />}
-      {stepTen && <DiscardOldThoughtsComponent />}
-      {step11 && (
+      {stepNine && (
+        <CheckOldThoughtsComponent
+          oldThoughtsRef={oldThoughtsRef}
+          setStepTen={setStepTen}
+        />
+      )}
+      {stepTen && (
+        <DiscardOldThoughtsComponent
+          discardThoughtsRef={discardThoughtsRef}
+          setStepEleven={setStepEleven}
+        />
+      )}
+      {stepEleven && (
         <ClosingComponent startOver={startOver} closingRef={closingRef} />
       )}
     </>
