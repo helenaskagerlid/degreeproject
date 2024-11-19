@@ -57,7 +57,7 @@ export const CriticNameComponent = ({
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
           />
-          <button>Save</button>
+          <button className="btn">Save</button>
         </form>
         <p
           ref={secondTextRef}

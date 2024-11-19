@@ -48,16 +48,16 @@ export const ChangeVoiceComponent = () => {
 
   return (
     <section>
-      <button onClick={startRecording} disabled={isRecording}>
+      <button className="btn" onClick={startRecording} disabled={isRecording}>
         Start recording
       </button>
-      <button onClick={stopRecording} disabled={!isRecording}>
+      <button className="btn" onClick={stopRecording} disabled={!isRecording}>
         Stop recording
       </button>
-      <button onClick={playChipmunk} disabled={!player}>
+      <button className="btn" onClick={playChipmunk} disabled={!player}>
         Chipmunk
       </button>
-      <button onClick={playMountaintroll} disabled={!player}>
+      <button className="btn" onClick={playMountaintroll} disabled={!player}>
         Mountaintroll
       </button>
     </section>
