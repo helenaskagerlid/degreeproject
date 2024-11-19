@@ -11,6 +11,7 @@ import { CheckThoughtsComponent } from "../components/Step 2 - Check thoughts/Ch
 import { ClosingComponent } from "../components/Step 11 - Closing/ClosingComponent";
 import { VoiceTheThoughtComponent } from "../components/Step 8 - Change Voice/VoiceTheThoughtComponent";
 import { DiscardOldThoughtsComponent } from "../components/Step 10 - Discard Old Thoughts/DiscardOldThoughtsComponent";
+import { CheckOldThoughtsComponent } from "../components/Step 9 - Check Old Thoughts/CheckOldThoughtsComponent";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -119,7 +120,6 @@ export const Home = () => {
           setStepTwo={setStepTwo}
         />
       )}
-      <DiscardOldThoughtsComponent />
       {stepTwo && (
         <CheckThoughtsComponent
           setStepThree={setStepThree}
@@ -162,7 +162,9 @@ export const Home = () => {
           setStepNine={setStepNine}
         />
       )}
-      {stepNine && (
+      {stepNine && <CheckOldThoughtsComponent />}
+      {stepTen && <DiscardOldThoughtsComponent />}
+      {step11 && (
         <ClosingComponent startOver={startOver} closingRef={closingRef} />
       )}
     </>
