@@ -11,10 +11,8 @@ export const useVisibilityObserver = <T extends HTMLElement>(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            console.log("KOLLA HÄR", entry.isIntersecting);
             setIsVisible(true);
             observer.unobserve(entry.target);
-            console.log(`${entry.target} är synligt!`);
           } else {
             setIsVisible(false);
           }
