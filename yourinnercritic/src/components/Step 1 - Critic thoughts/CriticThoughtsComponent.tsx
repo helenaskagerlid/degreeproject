@@ -3,6 +3,7 @@ import { saveToLocalStorage } from "../../helpers/saveToLocalStorage";
 import { ScrollArrowComponent } from "../ScrollArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
+import "./style.scss";
 
 interface IPropsCriticThoughtsComponent {
   criticThoughtsRef: React.RefObject<HTMLElement>;
@@ -38,7 +39,9 @@ export const CriticThoughtsComponent = ({
         />
         <h2
           ref={headingRef}
-          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+          className={`step-two-heading reveal-text ${
+            isHeadingVisible ? "is-visible" : ""
+          }`}
         >
           Step 1: Your inner Ciritic's Thoughts
         </h2>
@@ -49,11 +52,11 @@ export const CriticThoughtsComponent = ({
           Take a moment to notice which kinds of thoughts your inner ciritc is
           thinking in this situation. Then write them down here below:
         </p>
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
+        <form className="critic-thoughts-form" onSubmit={handleSubmit}>
+          <textarea
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
+            placeholder="Write the critic's thoughts here"
           />
           <button className="btn">Save</button>
         </form>
