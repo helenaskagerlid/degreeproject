@@ -1,3 +1,5 @@
+@use "./functions.scss" as *;
+
 :root {
   box-sizing: border-box;
   margin: 0;
@@ -22,7 +24,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(100% - 48px, 900px);
+  width: min(100% - rem(48), rem(900));
   margin-inline: auto;
   padding-block: 40px;
   text-align: center;
@@ -58,13 +60,13 @@ main {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: rem(80);
   text-transform: uppercase;
   font-weight: 400;
 }
 
 nav {
-  margin-right: 20px;
+  margin-right: rem(20);
 }
 
 ul {
@@ -77,8 +79,8 @@ a {
 }
 
 .feelings-img {
-  max-height: 350px;
-  width: 800px;
+  max-height: rem(350);
+  width: rem(800);
   object-fit: cover;
 }
 
@@ -87,7 +89,7 @@ a {
 .notice-emotion-img,
 .critic-name-image,
 .draw-inner-critic-img {
-  max-height: 400px;
+  max-height: rem(400);
   width: 60%;
   object-fit: cover;
 }
@@ -102,9 +104,9 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: min(100% - 48px, 900px);
+  max-width: min(100% - rem(48), rem(900));
   margin-inline: auto;
-  padding-block: 60px;
+  padding-block: rem(60);
 }
 
 .intro-component-section,
@@ -115,23 +117,23 @@ a {
 .drawing-section,
 .emotion-image-section,
 .notice-emotion-section {
-  padding-block: 30px;
+  padding-block: rem(30);
 }
 
 .closing-section {
-  padding-block: 175px;
+  padding-block: rem(175);
 }
 
 .btn {
   background-color: #38263f;
-  padding: 15px 25px;
+  padding: rem(15) rem(25);
   border-radius: 10px;
   color: white;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   border: 1px solid #b1afb3;
   text-transform: uppercase;
-  margin-inline-start: 10px;
+  margin-inline-start: rem(10);
 }
 
 .btn:hover {
@@ -145,9 +147,9 @@ a {
 
 textarea {
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
-  width: 500px;
-  height: 200px;
+  font-size: rem(12);
+  width: rem(500);
+  height: rem(200);
   background-color: rgb(168, 149, 173);
   border: 2px solid #38263f;
   color: black;
@@ -161,8 +163,8 @@ input:focus {
 }
 
 input {
-  width: 300px;
-  height: 25px;
+  width: rem(300);
+  height: rem(25);
   background-color: rgb(168, 149, 173);
   border: 2px solid #38263f;
   color: black;
