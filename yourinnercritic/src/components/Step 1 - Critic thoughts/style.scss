@@ -1,0 +1,23 @@
+.critic-thoughts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// .critic-thoughts-img {
+//   grid-column-start: 1;
+//   grid-column-end: 5;
+//   grid-row: 1;
+// }
+
+// .step-two-heading {
+//   grid-column-start: 1;
+//   grid-column-end: 5;
+//   grid-row-start: 2;
+// }
+
+.critic-thoughts-form {
+  display: flex;
+  flex-direction: column;
+  justify-items: end;
+}
