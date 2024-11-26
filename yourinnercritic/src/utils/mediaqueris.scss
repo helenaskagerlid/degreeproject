@@ -1,0 +1,13 @@
+@use "./functions.scss" as func;
+
+$breakpoints-up: (
+  "medium": func.em(700),
+  "large": func.em(900),
+  "xlarge": func.em(1100),
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}

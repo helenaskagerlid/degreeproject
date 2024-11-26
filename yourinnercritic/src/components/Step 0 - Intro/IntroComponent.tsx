@@ -1,4 +1,5 @@
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
+import "./style.scss";
 
 interface IPropsIntroComponent {
   setStepOne: (value: boolean) => void;
@@ -25,7 +26,9 @@ export const IntroComponent = ({ setStepOne }: IPropsIntroComponent) => {
         </h1>
         <p
           ref={textRef}
-          className={`reveal-text ${isTextVisible ? "is-visible" : ""}`}
+          className={`intro-text reveal-text ${
+            isTextVisible ? "is-visible" : ""
+          }`}
         >
           This site is a step-by-step guide to help you understand and work with
           your inner critic in creative ways. To get started, think about a
