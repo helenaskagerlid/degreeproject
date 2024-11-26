@@ -1,4 +1,5 @@
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
+import "./style.scss";
 
 interface IPropsIntroComponent {
   setStepOne: (value: boolean) => void;

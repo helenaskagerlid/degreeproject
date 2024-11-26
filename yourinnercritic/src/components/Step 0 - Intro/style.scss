@@ -1,0 +1,10 @@
+@use "../../utils/functions.scss" as *;
+
+h1 {
+  //back-up size in case a web browser doesn't support the clamp function below
+  font-size: rem(42);
+  font-size: clamp(rem(50), 1.77rem + 3.58vw, rem(80));
+  line-height: 1;
+  text-transform: uppercase;
+  font-weight: 400;
+}

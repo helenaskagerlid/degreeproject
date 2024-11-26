@@ -1,4 +1,4 @@
-@use "./functions.scss" as *;
+@use "../utils/functions.scss" as *;
 
 :root {
   box-sizing: border-box;
@@ -30,6 +30,10 @@ main {
   text-align: center;
 }
 
+p {
+  font-size: clamp(rem(12), rem(14) + 0.5vw, rem(24));
+}
+
 /* -----------------------  IMAGE ANIMATION  -----------------------  */
 
 .animation-img {
@@ -57,12 +61,6 @@ main {
 .reveal-text.is-visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-h1 {
-  font-size: rem(80);
-  text-transform: uppercase;
-  font-weight: 400;
 }
 
 nav {
