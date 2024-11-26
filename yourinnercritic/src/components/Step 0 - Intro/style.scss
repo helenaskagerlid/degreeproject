@@ -8,3 +8,7 @@ h1 {
   text-transform: uppercase;
   font-weight: 400;
 }
+
+.intro-text {
+  font-size: clamp(rem(12), rem(14) + 0.5vw, rem(24));
+}

@@ -31,7 +31,7 @@ main {
 }
 
 p {
-  font-size: clamp(rem(12), rem(14) + 0.5vw, rem(24));
+  font-size: clamp(rem(12), rem(14) + 0.5vw, rem(18));
 }
 
 /* -----------------------  IMAGE ANIMATION  -----------------------  */
@@ -146,7 +146,7 @@ a {
 textarea {
   font-family: "Poppins", sans-serif;
   font-size: rem(12);
-  width: rem(500);
+  // width: rem(500);
   height: rem(200);
   background-color: rgb(168, 149, 173);
   border: 2px solid #38263f;
