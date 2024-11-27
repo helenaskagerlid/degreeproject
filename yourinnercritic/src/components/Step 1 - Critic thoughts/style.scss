@@ -67,6 +67,8 @@
 }
 
 .hover-wrapper {
+  display: flex;
+  justify-content: end;
   position: relative;
 }
 
@@ -87,6 +89,8 @@
 
 .button-wrapper {
   display: flex;
+  justify-content: end;
+  margin-top: func.rem(10);
 }
 
 .delete-wrapper,
