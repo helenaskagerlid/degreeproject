@@ -1,11 +1,106 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
 .critic-thoughts-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+
+  @include media.breakpoint(medium) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: func.rem(20);
+
+    .step-one-wrapper {
+      display: grid;
+      align-items: start;
+    }
+
+    .step-one-heading {
+      grid-column: 1 / span 3;
+      grid-row: 1 / span 1;
+    }
+
+    .critic-thoughts-img {
+      grid-column: 1 / span 3;
+      justify-self: start;
+      align-self: start;
+      width: func.rem(320);
+    }
+
+    .step-one-text {
+      align-self: start;
+      justify-self: start;
+      margin: 0;
+    }
+
+    .critic-thoughts-form {
+      display: grid;
+      justify-self: start;
+      margin-top: func.rem(10);
+    }
+
+    .step-one-text-area {
+      width: func.rem(370);
+    }
+
+    .step-one-btn {
+      margin-top: func.rem(10);
+      justify-self: end;
+    }
+  }
+}
+
+.critic-thoughts-img {
+  max-height: func.rem(350);
+  width: clamp(func.rem(200), func.rem(250) + 5vw, func.rem(320));
+  object-fit: cover;
 }
 
 .critic-thoughts-form {
   display: flex;
   flex-direction: column;
   justify-items: end;
+}
+
+.note-step-one {
+  font-size: func.rem(12);
+  margin: 0;
+}
+
+.hover-wrapper {
+  display: flex;
+  justify-content: end;
+  position: relative;
+}
+
+.storage-information {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgb(38, 9, 48);
+  border: 1px solid black;
+  font-size: func.rem(12);
+  padding: func.rem(10);
+}
+
+.hover-wrapper:hover .storage-information {
+  display: block;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: end;
+  margin-top: func.rem(10);
+}
+
+.delete-wrapper,
+.save-wrapper {
+  align-items: center;
+  text-align: center;
+}
+
+.saved,
+.deleted {
+  font-size: func.rem(12);
+  margin: 0;
 }
