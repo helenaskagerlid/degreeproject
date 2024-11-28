@@ -19,11 +19,11 @@
       grid-row: 1 / span 1;
     }
 
-    .critic-thoughts-img {
+    .step-one-img {
       grid-column: 1 / span 3;
       justify-self: start;
       align-self: start;
-      width: func.rem(320);
+      width: clamp(func.rem(310), func.rem(310) + 5vw, func.rem(400));
     }
 
     .step-one-text {
@@ -32,7 +32,7 @@
       margin: 0;
     }
 
-    .critic-thoughts-form {
+    .step-one-form {
       display: grid;
       justify-self: start;
       margin-top: func.rem(10);
@@ -49,30 +49,30 @@
   }
 }
 
-.critic-thoughts-img {
+.step-one-img {
   max-height: func.rem(350);
-  width: clamp(func.rem(200), func.rem(250) + 5vw, func.rem(320));
+  width: clamp(func.rem(200), func.rem(290) + 5vw, func.rem(320));
   object-fit: cover;
 }
 
-.critic-thoughts-form {
+.step-one-form {
   display: flex;
   flex-direction: column;
   justify-items: end;
 }
 
-.note-step-one {
+.step-one-note {
   font-size: func.rem(12);
   margin: 0;
 }
 
-.hover-wrapper {
+.step-one-hover-wrapper {
   display: flex;
   justify-content: end;
   position: relative;
 }
 
-.storage-information {
+.step-one-storage-info {
   display: none;
   position: absolute;
   top: 100%;
@@ -83,18 +83,18 @@
   padding: func.rem(10);
 }
 
-.hover-wrapper:hover .storage-information {
+.step-one-hover-wrapper:hover .step-one-storage-info {
   display: block;
 }
 
-.button-wrapper {
+.step-one-button-wrapper {
   display: flex;
   justify-content: end;
   margin-top: func.rem(10);
 }
 
-.delete-wrapper,
-.save-wrapper {
+.step-one-delete-wrapper,
+.step-one-save-wrapper {
   align-items: center;
   text-align: center;
 }

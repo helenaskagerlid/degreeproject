@@ -9,7 +9,7 @@ export const SliderComponent = () => {
   };
   return (
     <>
-      <div className="slidecontainer">
+      <div className="slider-wrapper">
         <label htmlFor="myRange" className="slider-label">
           Not an inch true
         </label>
@@ -26,10 +26,11 @@ export const SliderComponent = () => {
           Feels true on every level
         </label>
       </div>
-
-      <p id="sliderValue" className="slider-value">
-        {sliderValue}
-      </p>
+      <div className="value-wrapper">
+        <p id="sliderValue" className="slider-value">
+          {sliderValue}
+        </p>
+      </div>
     </>
   );
 };

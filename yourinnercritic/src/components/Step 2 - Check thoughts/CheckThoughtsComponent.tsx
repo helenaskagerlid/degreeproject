@@ -2,6 +2,7 @@ import { ScrollArrowComponent } from "../ScrollArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { SliderComponent } from "../Slider/SliderComponent";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
+import "./stepTwoStyles.scss";
 
 interface ICheckThoughtsComponentProps {
   sliderRef: React.RefObject<HTMLElement>;
@@ -19,32 +20,37 @@ export const CheckThoughtsComponent = ({
 
   return (
     <>
-      <section className="slider-section" ref={sliderRef}>
+      <section className="check-thoughts-section" ref={sliderRef}>
         <h2
           ref={headingRef}
-          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+          className={`step-two-heading reveal-text ${
+            isHeadingVisible ? "is-visible" : ""
+          }`}
         >
           Step 2: How true does the words feel like?
         </h2>
         <p
           ref={textRef}
-          className={`reveal-text ${isTextVisible ? "is-visible" : ""}`}
+          className={`step-two-text reveal-text ${
+            isTextVisible ? "is-visible" : ""
+          }`}
         >
           Take a moment to notice how true the inner critic's word feels like.
           Use the slider to place it on a scale from "Not an inch true" to
           "Feels true on every level" for how you are feeling right now
         </p>
-        <SliderComponent />
-
-        <button
-          onClick={() => {
-            handleArrowClick(setStepThree);
-          }}
-        >
-          {" "}
-          <ScrollArrowComponent />
-        </button>
+        <div className="step-two-slider-wrapper">
+          <SliderComponent />
+        </div>
       </section>
+      <div
+        onClick={() => {
+          handleArrowClick(setStepThree);
+        }}
+      >
+        {" "}
+        <ScrollArrowComponent />
+      </div>
     </>
   );
 };

@@ -6,7 +6,7 @@ import {
 import { ScrollArrowComponent } from "../ScrollArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
-import "./style.scss";
+import "./stepOneStyles.scss";
 
 interface IPropsCriticThoughtsComponent {
   criticThoughtsRef: React.RefObject<HTMLElement>;
@@ -53,7 +53,7 @@ export const CriticThoughtsComponent = ({
         </h2>
         <div className="step-one-wrapper">
           <img
-            className="critic-thoughts-img animation-img"
+            className="step-one-img animation-img"
             width={5464}
             height={4881}
             onLoad={(e) => e.currentTarget.classList.add("is-visible")}
@@ -62,7 +62,7 @@ export const CriticThoughtsComponent = ({
             loading="lazy"
           />
         </div>
-        <div className="step-one-wrapper form-wrapper">
+        <div className="step-one-wrapper">
           <p
             ref={textRef}
             className={`step-one-text reveal-text ${
@@ -72,18 +72,18 @@ export const CriticThoughtsComponent = ({
             Take a moment to notice which kinds of thoughts your inner ciritc is
             thinking in this situation. Then write them down here below:
           </p>
-          <form className="critic-thoughts-form" onSubmit={handleSubmit}>
+          <form className="step-one-form" onSubmit={handleSubmit}>
             <textarea
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
               placeholder="Write the critic's thoughts here"
               className="step-one-text-area"
             />
-            <div className="hover-wrapper">
-              <p className="note-step-one">
+            <div className="step-one-hover-wrapper">
+              <p className="step-one-note">
                 Information about storage of your thoughts
               </p>
-              <p className="storage-information">
+              <p className="step-one-storage-info">
                 {" "}
                 Note: When you click save your thoughts will be stored in your
                 local storage. This will be deleted when you have done the last
@@ -91,8 +91,8 @@ export const CriticThoughtsComponent = ({
                 before that, just click the delete button here below
               </p>
             </div>
-            <div className="button-wrapper">
-              <div className="delete-wrapper">
+            <div className="step-one-button-wrapper">
+              <div className="step-one-delete-wrapper">
                 {" "}
                 <button className="btn step-one-btn" onClick={handleDelete}>
                   Delete
@@ -100,7 +100,7 @@ export const CriticThoughtsComponent = ({
                 {deleteMessage && <p className="deleted">Deleted</p>}
               </div>
 
-              <div className="save-wrapper">
+              <div className="step-one-save-wrapper">
                 {" "}
                 <button className="btn step-one-btn">Save</button>
                 {savedMessage && <p className="saved">Saved</p>}
