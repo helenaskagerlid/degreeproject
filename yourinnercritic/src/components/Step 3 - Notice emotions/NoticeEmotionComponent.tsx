@@ -1,6 +1,6 @@
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 
 interface INoticeEmotionComponentProps {
   noticeEmotionRef: React.RefObject<HTMLElement>;

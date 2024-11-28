@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
 import "./style.scss";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 
 interface IDiscardOldThoughtsComponentProps {
   discardThoughtsRef: React.RefObject<HTMLElement>;

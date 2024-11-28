@@ -1,6 +1,6 @@
 import { FormEvent, useState } from "react";
 import { saveToLocalStorage } from "../../helpers/saveToLocalStorage";
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 

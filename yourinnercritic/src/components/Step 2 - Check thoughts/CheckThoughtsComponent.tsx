@@ -1,4 +1,4 @@
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { SliderComponent } from "../Slider/SliderComponent";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
