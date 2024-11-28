@@ -1,0 +1,34 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
+.notice-emotion-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: func.rem(20);
+  }
+
+  .step-three-img {
+    grid-column: 1 / span 1;
+  }
+
+  .step-three-text-wrapper {
+    grid-column: 2 / span 3;
+    grid-row: 1 / span 1;
+  }
+
+  .step-three-heading {
+    margin-top: 0;
+  }
+}
+
+.step-three-img {
+  max-height: func.rem(450);
+  width: clamp(func.rem(200), func.rem(320) + 5vw, func.rem(400));
+  object-fit: cover;
+  margin-bottom: func.rem(20);
+}

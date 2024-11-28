@@ -106,26 +106,6 @@ section {
   cursor: pointer;
 }
 
-.arrow {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: rem(50);
-  height: rem(50);
-  border-radius: 50%;
-  border: 2px solid white;
-  background-color: #38263f;
-  font-family: "Poppins", sans-serif;
-}
-
-.arrow:hover {
-  cursor: pointer;
-}
-
-.material-symbols-outlined {
-  font-size: rem(50);
-}
 .about-section,
 .contact-section {
   height: 100vh;
