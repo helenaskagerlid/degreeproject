@@ -1,5 +1,5 @@
 import { handleArrowClick } from "../../helpers/handleArrowClick";
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { SliderComponent } from "../Slider/SliderComponent";
 
 interface ICheckOldThoughtsComponentProps {

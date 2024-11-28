@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
 import { ChangeVoiceComponent } from "../ChangeVoiceComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";

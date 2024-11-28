@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./style.scss";
+import "./sliderStyles.scss";
 
 export const SliderComponent = () => {
   const [sliderValue, setSliderValue] = useState<number>(0);
@@ -9,8 +9,8 @@ export const SliderComponent = () => {
   };
   return (
     <>
-      <div className="slidecontainer">
-        <label htmlFor="myRange" className="slider-label">
+      <div className="slider-wrapper">
+        <label htmlFor="myRange" className="slider-label-left">
           Not an inch true
         </label>
         <input
@@ -22,14 +22,15 @@ export const SliderComponent = () => {
           id="myRange"
           onChange={handleSliderChange}
         />
-        <label htmlFor="myRange" className="slider-label">
+        <label htmlFor="myRange" className="slider-label-right">
           Feels true on every level
         </label>
+        <div className="value-wrapper">
+          <p id="sliderValue" className="slider-value">
+            {sliderValue}
+          </p>
+        </div>
       </div>
-
-      <p id="sliderValue" className="slider-value">
-        {sliderValue}
-      </p>
     </>
   );
 };

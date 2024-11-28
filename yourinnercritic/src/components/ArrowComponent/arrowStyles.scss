@@ -1,0 +1,22 @@
+@use "../../utils/functions.scss" as func;
+
+.arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: clamp(func.rem(40), func.rem(40) + 1vw, func.rem(50));
+  height: clamp(func.rem(40), func.rem(40) + 1vw, func.rem(50));
+  border-radius: 50%;
+  border: 2px solid white;
+  background-color: #38263f;
+  font-family: "Poppins", sans-serif;
+}
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.material-symbols-outlined {
+  font-size: clamp(func.rem(40), func.rem(40) + 1vw, func.rem(50));
+}

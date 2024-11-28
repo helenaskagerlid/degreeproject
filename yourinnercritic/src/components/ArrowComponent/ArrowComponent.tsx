@@ -1,3 +1,5 @@
+import "./arrowStyles.scss";
+
 export const ScrollArrowComponent = () => {
   return (
     <>

@@ -1,7 +1,7 @@
 import { FormEvent, useState } from "react";
 import { IHits } from "../../models/IPixabayResponse";
 import { getPhotos } from "../../service/getPhotosService";
-import { ScrollArrowComponent } from "../ScrollArrowComponent";
+import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 

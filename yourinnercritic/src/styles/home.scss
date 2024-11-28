@@ -39,6 +39,23 @@ p {
   font-size: clamp(rem(12), rem(13) + 0.5vw, rem(16));
 }
 
+nav {
+  margin-right: rem(20);
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+a {
+  color: azure;
+}
+
+section {
+  padding-block: rem(60);
+}
+
 /* -----------------------  IMAGE ANIMATION  -----------------------  */
 
 .animation-img {
@@ -68,62 +85,9 @@ p {
   transform: translateY(0);
 }
 
-nav {
-  margin-right: rem(20);
-}
-
-ul {
-  display: flex;
-  justify-content: space-between;
-}
-
-a {
-  color: azure;
-}
-
-.feelings-img {
-  max-height: rem(350);
-  width: rem(800);
-  object-fit: cover;
-}
-
-.intro-emotion-image,
-.notice-emotion-img,
-.critic-name-image,
-.draw-inner-critic-img {
-  max-height: rem(400);
-  width: 60%;
-  object-fit: cover;
-}
-
 .not-asked-for-advice {
   font-size: 0.9em;
   font-style: italic;
-}
-
-.animation-section,
-.compare-thoughts-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: min(100% - rem(48), rem(900));
-  margin-inline: auto;
-  padding-block: rem(60);
-}
-
-.intro-component-section,
-.critic-thoughts-section,
-.slider-section,
-.critic-name-section,
-.animation-section,
-.drawing-section,
-.emotion-image-section,
-.notice-emotion-section {
-  padding-block: rem(30);
-}
-
-.closing-section {
-  padding-block: rem(175);
 }
 
 .btn {
