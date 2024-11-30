@@ -1,0 +1,65 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
+.critic-name-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: func.rem(20);
+
+    .step-five-img {
+      grid-column: 1 / span 1;
+    }
+
+    .step-five-wrapper {
+      display: grid;
+      grid-column: 2 / span 3;
+      grid-row: 1 / span 1;
+    }
+
+    .step-five-heading {
+      grid-column: 1 / span 2;
+    }
+
+    .step-five-text {
+      grid-column: 1 / span 2;
+    }
+
+    .step-five-form {
+      display: grid;
+      gap: func.rem(10);
+      justify-items: end;
+      max-width: 80%;
+    }
+
+    .step-five-input {
+      max-width: func.rem(400);
+    }
+
+    .step-five-button {
+      width: auto;
+      max-width: fit-content;
+      justify-self: end;
+    }
+
+    .step-five-advice {
+      grid-column: 1 / span 1;
+    }
+  }
+}
+
+.step-five-img {
+  max-height: func.rem(450);
+  width: clamp(func.rem(200), func.rem(320) + 5vw, func.rem(400));
+  object-fit: cover;
+  margin-bottom: func.rem(20);
+}
+
+.step-five-advice {
+  font-size: func.rem(12);
+  font-style: italic;
+}
