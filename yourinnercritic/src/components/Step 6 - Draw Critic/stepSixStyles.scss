@@ -1,0 +1,32 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
+.drawing-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: func.rem(20);
+    justify-items: center;
+
+    .step-six-img {
+      max-height: func.rem(350);
+      width: clamp(func.rem(600), func.rem(680) + 1vw, func.rem(760));
+      grid-column: 1 / span 2;
+    }
+
+    .step-six-text-wrapper {
+      grid-column: 1 / span 2;
+    }
+  }
+}
+
+.step-six-img {
+  max-height: func.rem(350);
+  width: clamp(func.rem(350), func.rem(380) + 1vw, func.rem(480));
+  object-fit: cover;
+  margin-bottom: func.rem(20);
+}
