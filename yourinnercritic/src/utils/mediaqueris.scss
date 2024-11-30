@@ -4,6 +4,7 @@ $breakpoints-up: (
   "medium": func.em(700),
   "large": func.em(900),
   "xlarge": func.em(1100),
+  "xxlarge": func.em(1300),
 );
 
 @mixin breakpoint($size) {
