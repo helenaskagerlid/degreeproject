@@ -1,0 +1,55 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
+.animation-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .step-seven-heading {
+    margin-bottom: func.rem(20);
+  }
+
+  .step-seven-save-animation-img {
+    height: func.rem(100);
+    width: clamp(func.rem(250), func.rem(380) + 10vw, func.rem(500));
+    object-fit: cover;
+  }
+
+  .step-seven-save-animation-img2 {
+    margin-top: func.rem(10);
+    height: func.rem(200);
+    max-width: clamp(func.rem(250), func.rem(380) + 10vw, func.rem(500));
+    object-fit: cover;
+  }
+
+  .step-seven-animation-frame {
+    height: func.rem(1500);
+    width: calc(func.rem(380) + 10vw);
+    object-fit: cover;
+
+    @include media.breakpoint(medium) {
+      height: func.rem(1500);
+      width: calc(func.rem(620) + 10vw);
+      object-fit: cover;
+    }
+
+    @include media.breakpoint(large) {
+      height: func.rem(1500);
+      width: calc(func.rem(720) + 10vw);
+      object-fit: cover;
+    }
+
+    @include media.breakpoint(xlarge) {
+      height: func.rem(900);
+      width: calc(func.rem(1050) + 5vw);
+      object-fit: cover;
+    }
+
+    @include media.breakpoint(xxlarge) {
+      height: func.rem(900);
+      width: clamp(func.rem(1200), func.rem(1250) + 4vw, func.rem(1700));
+      object-fit: cover;
+    }
+  }
+}
