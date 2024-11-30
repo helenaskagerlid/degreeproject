@@ -1,0 +1,81 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
+.emotion-image-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include media.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: func.rem(40);
+
+    .step-four-wrapper {
+      grid-column: 1 / span 1;
+      grid-row: 1 / span 1;
+    }
+
+    .step-four-form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .step-four-input {
+      width: 100%;
+    }
+
+    .step-four-button {
+      align-self: flex-end;
+      width: auto;
+    }
+  }
+}
+
+.step-four-images-section {
+  display: flex;
+  flex-direction: column;
+  padding-block: 0;
+
+  @include media.breakpoint(medium) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: func.rem(20);
+    justify-items: center;
+    text-align: center;
+  }
+
+  @include media.breakpoint(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: func.rem(20);
+
+    .step-four-search-image {
+      height: func.rem(350);
+      width: clamp(func.rem(250), func.rem(270) + 1vw, func.rem(310));
+      object-fit: cover;
+      margin-bottom: func.rem(20);
+      border: 2px solid white;
+    }
+  }
+}
+
+.step-four-img {
+  max-height: func.rem(450);
+  width: clamp(func.rem(200), func.rem(320) + 5vw, func.rem(400));
+  object-fit: cover;
+  margin-bottom: func.rem(20);
+}
+
+.step-four-search-image {
+  height: func.rem(350);
+  width: clamp(func.rem(260), func.rem(280) + 1vw, func.rem(320));
+  object-fit: cover;
+  margin-bottom: func.rem(20);
+  border: 2px solid white;
+}
+
+.step-four-button {
+  margin-top: func.rem(10);
+}
