@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
-import "./style.scss";
+import "./stepTenStyles.scss";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 
@@ -72,30 +72,33 @@ export const DiscardOldThoughtsComponent = ({
         >
           <p>{yourOldThoughts}</p>
         </div>
-        <button
-          className="btn"
-          onClick={() => {
-            addAnimationClass("spin");
-          }}
-        >
-          Spin and Shrink
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            addAnimationClass("fade");
-          }}
-        >
-          Fade away
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            addAnimationClass("fall");
-          }}
-        >
-          Fall and disappear
-        </button>
+        <div className="step-ten-button-wrapper">
+          <button
+            className="btn"
+            onClick={() => {
+              addAnimationClass("spin");
+            }}
+          >
+            Spin and Shrink
+          </button>
+          <button
+            className="btn"
+            onClick={() => {
+              addAnimationClass("fade");
+            }}
+          >
+            Fade away
+          </button>
+          <button
+            className="btn"
+            onClick={() => {
+              addAnimationClass("fall");
+            }}
+          >
+            Fall and disappear
+          </button>
+        </div>
+
         {showText && (
           <div>
             <p>Sayonara! I won't really miss you..</p>
@@ -106,14 +109,14 @@ export const DiscardOldThoughtsComponent = ({
             </p>
           </div>
         )}
-        <button
-          onClick={() => {
-            handleArrowClick(setStepEleven);
-          }}
-        >
-          <ScrollArrowComponent />
-        </button>
       </section>
+      <div
+        onClick={() => {
+          handleArrowClick(setStepEleven);
+        }}
+      >
+        <ScrollArrowComponent />
+      </div>
     </>
   );
 };

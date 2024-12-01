@@ -1,3 +1,6 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
 .spinning-div {
   animation: spinAndShrink 5s ease-in-out forwards;
 }
@@ -50,4 +53,20 @@
 
 .show-the-thoughts {
   opacity: 1;
+}
+
+.step-ten-button-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: func.rem(10);
+  align-items: center;
+  justify-items: center;
+
+  @include media.breakpoint(medium) {
+    flex-direction: row;
+
+    .btn {
+      margin: 0;
+    }
+  }
 }
