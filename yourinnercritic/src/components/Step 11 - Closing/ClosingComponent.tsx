@@ -1,4 +1,5 @@
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
+import "./stepElevenStyles.scss";
 
 interface IClosingComponentProps {
   startOver: () => void;
@@ -14,19 +15,23 @@ export const ClosingComponent = ({
 
   return (
     <>
-      <section ref={closingRef}>
+      <section className="closing-section" ref={closingRef}>
         <h2
           ref={headingRef}
-          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+          className={`step-eleven-heading reveal-text ${
+            isHeadingVisible ? "is-visible" : ""
+          }`}
         >
           Great job!
         </h2>
-        <h3
+        <p
           ref={headingRef}
-          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+          className={`step-eleven text reveal-text ${
+            isHeadingVisible ? "is-visible" : ""
+          }`}
         >
           Wanna do this all over with another situation?
-        </h3>
+        </p>
         <button className="btn" onClick={startOver}>
           Start over
         </button>
