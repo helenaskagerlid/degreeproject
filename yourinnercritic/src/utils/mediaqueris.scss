@@ -1,6 +1,7 @@
 @use "./functions.scss" as func;
 
 $breakpoints-up: (
+  "small": func.em(400),
   "medium": func.em(700),
   "large": func.em(900),
   "xlarge": func.em(1100),
