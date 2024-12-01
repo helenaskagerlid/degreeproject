@@ -1,6 +1,7 @@
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { SliderComponent } from "../Slider/SliderComponent";
+import "./stepNineStyles.scss";
 
 interface ICheckOldThoughtsComponentProps {
   oldThoughtsRef: React.RefObject<HTMLElement>;
@@ -13,22 +14,26 @@ export const CheckOldThoughtsComponent = ({
 }: ICheckOldThoughtsComponentProps) => {
   return (
     <>
-      <section ref={oldThoughtsRef}>
-        <h2>Step 9 - Check in with those old thoughts</h2>
-        <p>
+      <section className="check-old-thoughts-section" ref={oldThoughtsRef}>
+        <h2 className="step-nine-heading">
+          Step 9 - Check in with those old thoughts
+        </h2>
+        <p className="step-nine-text">
           Now the real question is, how do you feel about these old thoughts
           after seeing your inner critic in some different ehrm... situations?
           Check in and put the value on the slider to where it resonates now.
         </p>
-        <SliderComponent />
-        <button
-          onClick={() => {
-            handleArrowClick(setStepTen);
-          }}
-        >
-          <ScrollArrowComponent />
-        </button>
+        <div className="step-nine-slider-wrapper">
+          <SliderComponent />
+        </div>
       </section>
+      <div
+        onClick={() => {
+          handleArrowClick(setStepTen);
+        }}
+      >
+        <ScrollArrowComponent />
+      </div>
     </>
   );
 };
