@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { getFromLocalStorage } from "../../helpers/saveToLocalStorage";
-import { ChangeVoiceComponent } from "../ChangeVoiceComponent";
+import { ChangeVoiceComponent } from "./ChangeVoiceComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
+import "./stepEightStyles.scss";
 
 interface ICompareThoughtsComponentProps {
   voiceTheThoughtRef: React.RefObject<HTMLElement>;
@@ -41,13 +42,17 @@ export const VoiceTheThoughtComponent = ({
       <section className="compare-thoughts-section" ref={voiceTheThoughtRef}>
         <h2
           ref={headingRef}
-          className={`reveal-text ${isHeadingVisible ? "is-visible" : ""}`}
+          className={`step-eight-heading reveal-text ${
+            isHeadingVisible ? "is-visible" : ""
+          }`}
         >
           Step 8: Voice the thoughts
         </h2>
         <p
           ref={textRef}
-          className={`reveal-text ${isTextVisible ? "is-visible" : ""}`}
+          className={`step-eight-text1 reveal-text ${
+            isTextVisible ? "is-visible" : ""
+          }`}
         >
           You critic <strong>{innerCriticName}</strong> have been having some
           old thoughts
@@ -67,7 +72,7 @@ export const VoiceTheThoughtComponent = ({
             <span className="material-symbols-outlined">arrow_downward</span>
             <br /> <br />
             <iframe
-              className={`animation-img text-reveal ${
+              className={`step-eight-iframe animation-img text-reveal ${
                 isSecondTextVisible ? "is-visible" : ""
               }`}
               src={savedAnimation}
@@ -94,18 +99,21 @@ export const VoiceTheThoughtComponent = ({
           time. The goal here is to make the words feel even more distant, but
           in a goofy way. Some inspiration of types of voices you can try out:
           American, swenglish, a not so impressed teenager, a cartoon
-          character.. BONUS: After you have finished recording you can even try
-          to add a fun chipmunk or mountaintroll effect!
+          character..
+        </p>
+        <p>
+          BONUS: After you have finished recording you can even try to add a fun
+          chipmunk or mountaintroll effect!
         </p>
         <ChangeVoiceComponent />
-        <button
-          onClick={() => {
-            handleArrowClick(setStepNine);
-          }}
-        >
-          <ScrollArrowComponent />
-        </button>
       </section>
+      <div
+        onClick={() => {
+          handleArrowClick(setStepNine);
+        }}
+      >
+        <ScrollArrowComponent />
+      </div>
     </>
   );
 };

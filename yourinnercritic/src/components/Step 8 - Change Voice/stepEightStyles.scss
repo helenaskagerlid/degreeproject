@@ -1,0 +1,22 @@
+@use "../../utils/mediaqueris.scss" as media;
+@use "../../utils/functions.scss" as func;
+
+.compare-thoughts-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100% - func.rem(30), func.rem(600));
+  margin-inline: auto;
+  text-align: center;
+
+  .step-eight-iframe {
+    height: 440px;
+    width: calc(func.rem(320) + 10vw);
+    object-fit: cover;
+    margin-top: func.rem(20);
+
+    @include media.breakpoint(small) {
+      width: calc(func.rem(350) + 10vw);
+    }
+  }
+}

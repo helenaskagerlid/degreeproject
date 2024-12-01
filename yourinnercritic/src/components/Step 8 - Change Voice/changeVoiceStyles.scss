@@ -1,0 +1,86 @@
+@use "../../utils/functions.scss" as func;
+
+.change-voice-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding-top: func.rem(20);
+  padding-bottom: 0;
+}
+
+.recorder {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.is-recording-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.recording-indicator {
+  width: 1rem;
+  height: 1rem;
+  background-color: red;
+  border-radius: 50%;
+  animation: pulse 1s infinite;
+  margin-right: func.rem(10);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+.effect-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+select {
+  width: 220px;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 1px solid white;
+  border-radius: 12px;
+  background-color: #73647c;
+  color: rgb(247, 245, 245);
+  cursor: pointer;
+  outline: none;
+}
+
+select option {
+  font-size: 1rem;
+  padding: 0.6rem;
+  background-color: #73647c;
+  color: rgb(247, 245, 245);
+  border-radius: 8px;
+}
+
+select option:hover {
+  background-color: #38263f;
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  color: black;
+  background-color: #ccccccb1;
+}
+
+.stop-btn {
+  border: 1px solid black;
+}
