@@ -1,13 +1,52 @@
 @use "../../utils/mediaqueris.scss" as media;
 @use "../../utils/functions.scss" as func;
 
-.compare-thoughts-section {
+.voice-the-thoughts-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: min(100% - func.rem(30), func.rem(600));
   margin-inline: auto;
   text-align: center;
+
+  @include media.breakpoint(large) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: func.rem(20);
+    align-items: left;
+    justify-items: left;
+    text-align: left;
+    width: 100%;
+
+    .step-eight-heading {
+      grid-column: 1 / span 2;
+      grid-row: 1 / span 1;
+    }
+
+    .step-eight-iframe-wrapper {
+      grid-column: 1 / span 1;
+      grid-row: 2 / span 3;
+      align-self: start;
+      max-width: 100%;
+    }
+
+    .step-eight-iframe {
+      max-width: 450px;
+    }
+
+    .step-eight-text2 {
+      grid-column: 1 / span 1;
+      grid-row: 5 / span 1;
+      margin: 0;
+      align-self: start;
+    }
+
+    .step-eight-change-voice-wrapper {
+      grid-column: 1 / span 2;
+      justify-self: center;
+    }
+  }
 
   .step-eight-iframe {
     height: 440px;
