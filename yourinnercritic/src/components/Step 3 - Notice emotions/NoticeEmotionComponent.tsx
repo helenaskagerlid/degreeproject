@@ -50,14 +50,15 @@ export const NoticeEmotionComponent = ({
           </p>
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepFour);
         }}
       >
         {" "}
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

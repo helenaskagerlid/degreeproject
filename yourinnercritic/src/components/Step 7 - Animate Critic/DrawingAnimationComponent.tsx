@@ -86,14 +86,15 @@ export const DrawingAnimationComponent = ({
           {notSaved && <p>You have to add a link to your animation</p>}
         </form>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepEight);
         }}
       >
         {" "}
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

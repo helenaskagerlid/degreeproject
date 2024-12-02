@@ -48,13 +48,14 @@ export const DrawingComponent = ({
           </p>
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepSeven);
         }}
       >
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

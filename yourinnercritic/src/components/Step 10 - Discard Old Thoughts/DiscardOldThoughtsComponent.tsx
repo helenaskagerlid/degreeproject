@@ -110,13 +110,14 @@ export const DiscardOldThoughtsComponent = ({
           </div>
         )}
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepEleven);
         }}
       >
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };
