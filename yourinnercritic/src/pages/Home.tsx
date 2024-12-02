@@ -12,6 +12,7 @@ import { ClosingComponent } from "../components/Step 11 - Closing/ClosingCompone
 import { VoiceTheThoughtComponent } from "../components/Step 8 - Change Voice/VoiceTheThoughtComponent";
 import { DiscardOldThoughtsComponent } from "../components/Step 10 - Discard Old Thoughts/DiscardOldThoughtsComponent";
 import { CheckOldThoughtsComponent } from "../components/Step 9 - Check Old Thoughts/CheckOldThoughtsComponent";
+import { ClearLocalStorage } from "../components/ClearLocalStorage";
 
 export const Home = () => {
   const [fetchedPhotos, setFetchedPhotos] = useState(false);
@@ -132,6 +133,7 @@ export const Home = () => {
 
   return (
     <>
+      <ClearLocalStorage />
       <IntroComponent setStepOne={setStepOne} />
       {stepOne && (
         <CriticThoughtsComponent
