@@ -21,11 +21,19 @@ export const CriticNameComponent = ({
     useVisibilityObserver<HTMLParagraphElement>();
   const { isVisible: isSecondTextVisible, elementRef: secondTextRef } =
     useVisibilityObserver<HTMLParagraphElement>();
+  const [noName, setNoName] = useState<boolean>(false);
+  const [name, setName] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    saveToLocalStorage("innerCriticName", userInput);
-    setUserInput("");
+    if (userInput === "") {
+      setNoName(true);
+    } else {
+      setName(true);
+      saveToLocalStorage("innerCriticName", userInput);
+      setUserInput("");
+      setNoName(false);
+    }
   };
 
   return (
@@ -64,8 +72,13 @@ export const CriticNameComponent = ({
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
             />
+            {noName && (
+              <p className="step-five-no-name-text">Please choose a name</p>
+            )}
             <button className="step-five-button btn">Save</button>
+            {name && <p className="step-five-name-text">Named saved</p>}
           </form>
+
           <p
             ref={secondTextRef}
             className={`step-five-advice reveal-text ${
@@ -83,6 +96,7 @@ export const CriticNameComponent = ({
       </section>
       <button
         className="arrow-btn"
+        disabled={!name}
         onClick={() => {
           handleArrowClick(setStepSix);
         }}
@@ -90,6 +104,11 @@ export const CriticNameComponent = ({
         {" "}
         <ScrollArrowComponent />
       </button>
+      {noName && (
+        <p className="step-five-no-name-text2">
+          Please choose a name to continue
+        </p>
+      )}
     </>
   );
 };
