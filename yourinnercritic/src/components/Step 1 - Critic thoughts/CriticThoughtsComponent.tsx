@@ -128,7 +128,9 @@ export const CriticThoughtsComponent = ({
         <ScrollArrowComponent />
       </button>
       {notSaved && (
-        <p>To continue, please fill in your inner critic's thoughts</p>
+        <p className="saved">
+          To continue, please fill in your inner critic's thoughts
+        </p>
       )}
     </>
   );
