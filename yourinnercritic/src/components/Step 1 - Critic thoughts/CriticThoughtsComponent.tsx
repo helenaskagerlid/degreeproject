@@ -24,13 +24,20 @@ export const CriticThoughtsComponent = ({
     useVisibilityObserver<HTMLParagraphElement>();
   const [deleteMessage, setDeleteMessage] = useState<boolean>(false);
   const [savedMessage, setSavedMessage] = useState<boolean>(false);
+  const [notSaved, setNotSaved] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    saveToLocalStorage("criticalThoughts", userInput);
-    setUserInput("");
-    setSavedMessage(true);
-    setDeleteMessage(false);
+    if (userInput === "") {
+      setNotSaved(true);
+      setSavedMessage(false);
+    } else {
+      saveToLocalStorage("criticalThoughts", userInput);
+      setUserInput("");
+      setNotSaved(false);
+      setSavedMessage(true);
+      setDeleteMessage(false);
+    }
   };
 
   const handleDelete = (e: FormEvent) => {
@@ -102,21 +109,27 @@ export const CriticThoughtsComponent = ({
 
               <div className="step-one-save-wrapper">
                 {" "}
-                <button className="btn step-one-btn">Save</button>
+                <button className="btn step-one-btn">Save you thoughts</button>
                 {savedMessage && <p className="saved">Saved</p>}
+                {notSaved && <p className="saved">Write a thought, please</p>}
               </div>
             </div>
           </form>
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
+        disabled={!savedMessage}
         onClick={() => {
           handleArrowClick(setStepTwo);
         }}
       >
         {" "}
         <ScrollArrowComponent />
-      </div>
+      </button>
+      {notSaved && (
+        <p>To continue, please fill in your inner critic's thoughts</p>
+      )}
     </>
   );
 };

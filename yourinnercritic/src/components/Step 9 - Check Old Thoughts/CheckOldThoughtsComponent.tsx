@@ -27,13 +27,14 @@ export const CheckOldThoughtsComponent = ({
           <SliderComponent />
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepTen);
         }}
       >
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

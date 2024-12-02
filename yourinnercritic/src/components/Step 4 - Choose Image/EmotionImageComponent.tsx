@@ -111,13 +111,14 @@ export const EmotionImageComponent = ({
         </section>
       )}
 
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepFive);
         }}
       >
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

@@ -119,13 +119,14 @@ export const VoiceTheThoughtComponent = ({
           <ChangeVoiceComponent />
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepNine);
         }}
       >
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

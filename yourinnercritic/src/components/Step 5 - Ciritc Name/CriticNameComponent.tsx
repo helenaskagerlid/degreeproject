@@ -81,14 +81,15 @@ export const CriticNameComponent = ({
           </p>
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepSix);
         }}
       >
         {" "}
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };

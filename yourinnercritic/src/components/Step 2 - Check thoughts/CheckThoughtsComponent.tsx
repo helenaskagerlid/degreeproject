@@ -43,14 +43,15 @@ export const CheckThoughtsComponent = ({
           <SliderComponent />
         </div>
       </section>
-      <div
+      <button
+        className="arrow-btn"
         onClick={() => {
           handleArrowClick(setStepThree);
         }}
       >
         {" "}
         <ScrollArrowComponent />
-      </div>
+      </button>
     </>
   );
 };
