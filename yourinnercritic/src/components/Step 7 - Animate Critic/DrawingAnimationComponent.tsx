@@ -37,14 +37,28 @@ export const DrawingAnimationComponent = ({
   return (
     <>
       <section className="animation-section" ref={animationRef}>
-        <h2
-          ref={headingRef}
-          className={`step-seven-heading reveal-text ${
-            isHeadingVisible ? "is-visible" : ""
-          }`}
-        >
-          Step 7: Animate your inner critic
-        </h2>
+        <div className="step-seven-intro-wrapper">
+          <h2
+            ref={headingRef}
+            className={`step-seven-heading reveal-text ${
+              isHeadingVisible ? "is-visible" : ""
+            }`}
+          >
+            Step 7: Animate your inner critic
+          </h2>
+          <p className="step-seven-text">
+            After you finish your drawing you’ll be animating your inner critic
+            using a tool called Animated Drawing. Here’s how to prepare: Accept
+            Cookies: Make sure to accept cookies on the Animated Drawing page to
+            use the tool fully. Follow Their Guide: Take a photo of your
+            drawing, upload it to the page below and follow their guide to
+            animate it step by step. Note: At the end of the process, don’t
+            forget to save the animation that you like the most. You can click
+            the share button and save the link which you will be requested to
+            provied in an input below. When you’re ready just scroll down and
+            start animating!
+          </p>
+        </div>
         <iframe
           className="step-seven-animation-frame animation-image"
           src="https://sketch.metademolab.com/canvas"

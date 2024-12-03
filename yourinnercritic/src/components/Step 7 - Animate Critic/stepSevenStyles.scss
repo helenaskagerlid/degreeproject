@@ -5,12 +5,29 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: min(100% - func.rem(30), func.rem(600));
+  width: min(100%, func.rem(900));
   margin-inline: auto;
   text-align: center;
 
-  .step-seven-heading {
-    margin-bottom: func.rem(20);
+  .step-seven-intro-wrapper {
+    @include media.breakpoint(medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      gap: func.rem(20);
+      align-items: left;
+      justify-items: left;
+      text-align: left;
+
+      .step-seven-heading {
+        grid-column: 1 / span 2;
+      }
+
+      .step-seven-text {
+        grid-column: 1 / span 2;
+        margin-bottom: func.rem(50);
+      }
+    }
   }
 
   .step-seven-animation-frame {
@@ -45,15 +62,23 @@
 
   .step-seven-save-animation-img {
     max-height: func.rem(300);
-    width: 100%;
+    width: 80%;
     object-fit: cover;
+
+    @include media.breakpoint(medium) {
+      width: 60%;
+    }
   }
 
   .step-seven-save-animation-img2 {
     margin-top: func.rem(10);
     max-height: func.rem(300);
-    width: 100%;
+    width: 80%;
     object-fit: cover;
+
+    @include media.breakpoint(medium) {
+      width: 60%;
+    }
   }
 
   .step-seven-button {
