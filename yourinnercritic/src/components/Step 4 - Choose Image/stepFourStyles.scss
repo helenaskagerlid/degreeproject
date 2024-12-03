@@ -6,6 +6,10 @@
   flex-direction: column;
   align-items: center;
 
+  .choosen-image-frame {
+    border-radius: 10%;
+  }
+
   @include media.breakpoint(medium) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -74,6 +78,14 @@
   object-fit: cover;
   margin-bottom: func.rem(20);
   border: 2px solid white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.choosen-image-frame {
+  border: 2px solid purple;
 }
 
 .step-four-choosen-image-text {

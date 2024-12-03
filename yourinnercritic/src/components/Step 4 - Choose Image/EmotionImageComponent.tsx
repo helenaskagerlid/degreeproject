@@ -96,7 +96,9 @@ export const EmotionImageComponent = ({
               id={photo.webformatURL}
             >
               <img
-                className="step-four-search-image"
+                className={`step-four-search-image ${
+                  selectedImage ? "choosen-image-frame" : ""
+                }`}
                 src={photo.webformatURL}
                 onClick={() => {
                   saveImage(photo.webformatURL);
@@ -110,7 +112,9 @@ export const EmotionImageComponent = ({
                 </a>
               </p>
               {selectedImage === photo.webformatURL && (
-                <p className="step-four-choosen-image-text">Image choosen</p>
+                <p className="step-four-choosen-image-text">
+                  Your choosen image
+                </p>
               )}
             </div>
           ))}
