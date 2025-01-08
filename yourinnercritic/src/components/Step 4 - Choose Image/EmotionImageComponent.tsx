@@ -27,7 +27,7 @@ export const EmotionImageComponent = ({
     useVisibilityObserver<HTMLHeadingElement>();
   const { isVisible: isTextVisible, elementRef: textRef } =
     useVisibilityObserver<HTMLParagraphElement>();
-  const [selectedImage, setSelectedImage] = useState<string>("");
+  const [selectedImage, setSelectedImage] = useState<number>();
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -35,11 +35,6 @@ export const EmotionImageComponent = ({
     const photos = await getPhotos(userInput);
     setMyPhotos(photos);
     setFetchedPhotos(true);
-  };
-
-  const saveImage = (imageLink: string) => {
-    localStorage.setItem("savedImage", JSON.stringify(imageLink));
-    setSelectedImage(imageLink);
   };
 
   return (
@@ -97,25 +92,24 @@ export const EmotionImageComponent = ({
             >
               <img
                 className={`step-four-search-image ${
-                  selectedImage ? "choosen-image-frame" : ""
+                  selectedImage === photo.id ? "choosen-image-frame" : ""
                 }`}
                 src={photo.webformatURL}
                 onClick={() => {
-                  saveImage(photo.webformatURL);
+                  setSelectedImage(photo.id);
                 }}
               />
-
+              {selectedImage === photo.id && (
+                <p className="step-four-choosen-image-text">
+                  Your choosen image
+                </p>
+              )}
               <p>
                 Photograpger:{" "}
                 <a target="_blank" href={photo.pageURL}>
                   {photo.user}
                 </a>
               </p>
-              {selectedImage === photo.webformatURL && (
-                <p className="step-four-choosen-image-text">
-                  Your choosen image
-                </p>
-              )}
             </div>
           ))}
         </section>
