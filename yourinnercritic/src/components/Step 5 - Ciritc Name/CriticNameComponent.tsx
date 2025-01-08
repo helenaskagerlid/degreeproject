@@ -1,6 +1,5 @@
 import { FormEvent, useState } from "react";
 import { saveToLocalStorage } from "../../helpers/saveToLocalStorage";
-import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 import "./stepFiveStyles.scss";
@@ -23,6 +22,7 @@ export const CriticNameComponent = ({
     useVisibilityObserver<HTMLParagraphElement>();
   const [noName, setNoName] = useState<boolean>(false);
   const [name, setName] = useState<boolean>(false);
+  const [showCheckmark, setShowCheckmark] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -33,6 +33,9 @@ export const CriticNameComponent = ({
       saveToLocalStorage("innerCriticName", userInput);
       setUserInput("");
       setNoName(false);
+      setShowCheckmark(false);
+      setTimeout(() => setShowCheckmark(true), 0);
+      handleArrowClick(setStepSix);
     }
   };
 
@@ -76,7 +79,12 @@ export const CriticNameComponent = ({
               <p className="step-five-no-name-text">Please choose a name</p>
             )}
             <button className="step-five-button btn">Save</button>
-            {name && <p className="step-five-name-text">Named saved</p>}
+            {showCheckmark && (
+              <div className="step-five-checkmark-wrapper">
+                {name && <p className="step-five-name-text">Named saved</p>}
+                <div className="step-five-checkmark"></div>
+              </div>
+            )}
           </form>
 
           <p
@@ -94,21 +102,6 @@ export const CriticNameComponent = ({
           </p>
         </div>
       </section>
-      <button
-        className="arrow-btn"
-        disabled={!name}
-        onClick={() => {
-          handleArrowClick(setStepSix);
-        }}
-      >
-        {" "}
-        <ScrollArrowComponent />
-      </button>
-      {noName && (
-        <p className="step-five-no-name-text2">
-          Please choose a name to continue
-        </p>
-      )}
     </>
   );
 };
