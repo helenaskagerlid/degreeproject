@@ -31,9 +31,10 @@ export const IntroComponent = ({ setStepOne }: IPropsIntroComponent) => {
           }`}
         >
           This site is a step-by-step guide to help you understand and work with
-          your inner critic in creative ways. To get started, think about a
-          situation where your inner critic was active, and follow along as we
-          guide you through the process of addressing it in a new and fun way.
+          your inner critic, you know that harsh voice in your head, in creative
+          ways. To get started, think about a situation where your inner critic
+          was active, and follow along as we guide you through the process of
+          addressing it in a new and fun way.
         </p>
         <button id="startBtn" className="start-btn btn" onClick={getStarted}>
           Get started

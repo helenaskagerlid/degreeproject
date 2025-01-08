@@ -56,9 +56,9 @@ export const DrawingComponent = ({
             </p>
             <p>
               {" "}
-              This step is also very important to help you get more distance to
-              your inner critic since it will be placed even more outside of
-              your head when you bring it out on paper. So, just use your
+              This step is also very important to help you get more distance
+              from your inner critic since it will be placed even more outside
+              of your head when you bring it out on paper. So, just use your
               creativity — give your inner critic a shape, colors, and details
               that reflect how you feel about it. Don’t worry about making it
               perfect; the goal is to express yourself and to have a fun time.
