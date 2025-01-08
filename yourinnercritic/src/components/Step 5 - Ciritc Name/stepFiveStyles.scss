@@ -70,7 +70,41 @@
   margin: 0;
 }
 
-.step-five-no-name-text2 {
-  font-size: func.rem(12);
-  margin-top: 10px;
+.step-five-name-text {
+  margin-top: func.rem(5);
+}
+
+.step-five-checkmark-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.step-five-checkmark {
+  position: relative;
+  width: func.rem(16);
+  height: func.rem(16);
+  margin-left: func.rem(10);
+}
+
+.step-five-checkmark::after {
+  content: "";
+  position: absolute;
+  width: func.rem(6);
+  height: func.rem(12);
+  border: solid #89d989;
+  border-width: 0 2px 2px 0;
+  top: 0;
+  left: 0;
+  transform: rotate(45deg) scale(0);
+  transform-origin: bottom left;
+  animation: drawCheck 0.6s ease-out forwards;
+}
+
+@keyframes drawCheck {
+  0% {
+    transform: rotate(45deg) scale(0);
+  }
+  100% {
+    transform: rotate(45deg) scale(1);
+  }
 }

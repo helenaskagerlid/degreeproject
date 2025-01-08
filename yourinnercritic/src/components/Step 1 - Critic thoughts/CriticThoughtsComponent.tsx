@@ -3,7 +3,6 @@ import {
   deleteFromLocalStorage,
   saveToLocalStorage,
 } from "../../helpers/saveToLocalStorage";
-import { ScrollArrowComponent } from "../ArrowComponent/ArrowComponent";
 import { handleArrowClick } from "../../helpers/handleArrowClick";
 import { useVisibilityObserver } from "../../hooks/useVisibilityObserver";
 import "./stepOneStyles.scss";
@@ -25,6 +24,7 @@ export const CriticThoughtsComponent = ({
   const [deleteMessage, setDeleteMessage] = useState<boolean>(false);
   const [savedMessage, setSavedMessage] = useState<boolean>(false);
   const [notSaved, setNotSaved] = useState<boolean>(false);
+  const [showCheckmark, setShowCheckmark] = useState<boolean>(false);
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -33,10 +33,12 @@ export const CriticThoughtsComponent = ({
       setSavedMessage(false);
     } else {
       saveToLocalStorage("criticalThoughts", userInput);
-      setUserInput("");
       setNotSaved(false);
       setSavedMessage(true);
       setDeleteMessage(false);
+      setShowCheckmark(false);
+      setTimeout(() => setShowCheckmark(true), 0);
+      handleArrowClick(setStepTwo);
     }
   };
 
@@ -45,6 +47,7 @@ export const CriticThoughtsComponent = ({
     deleteFromLocalStorage("criticalThoughts");
     setDeleteMessage(true);
     setSavedMessage(false);
+    setShowCheckmark(false);
   };
 
   return (
@@ -110,28 +113,18 @@ export const CriticThoughtsComponent = ({
               <div className="step-one-save-wrapper">
                 {" "}
                 <button className="btn step-one-btn">Save you thoughts</button>
-                {savedMessage && <p className="saved">Saved</p>}
+                {showCheckmark && (
+                  <div className="step-one-checkmark-wrapper">
+                    {savedMessage && <p className="saved">Saved</p>}
+                    <div className="step-one-checkmark"></div>
+                  </div>
+                )}
                 {notSaved && <p className="saved">Write a thought, please</p>}
               </div>
             </div>
           </form>
         </div>
       </section>
-      <button
-        className="arrow-btn"
-        disabled={!savedMessage}
-        onClick={() => {
-          handleArrowClick(setStepTwo);
-        }}
-      >
-        {" "}
-        <ScrollArrowComponent />
-      </button>
-      {notSaved && (
-        <p className="saved">
-          To continue, please fill in your inner critic's thoughts
-        </p>
-      )}
     </>
   );
 };
