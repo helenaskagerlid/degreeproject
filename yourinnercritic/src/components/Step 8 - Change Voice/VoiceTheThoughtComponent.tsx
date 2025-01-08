@@ -55,8 +55,8 @@ export const VoiceTheThoughtComponent = ({
               isTextVisible ? "is-visible" : ""
             }`}
           >
-            You critic <strong>{innerCriticName}</strong> have been having some
-            old thoughts. The thoughts in question: "Me,{" "}
+            You critic <strong>{innerCriticName}</strong> has been having some
+            unhelpful thoughts. The thoughts in question: "Me,{" "}
             <strong>{innerCriticName}</strong>, have been thinking: '
             {criticalThoughts}'"
           </p>

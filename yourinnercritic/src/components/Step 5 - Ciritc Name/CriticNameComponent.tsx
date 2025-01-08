@@ -87,7 +87,7 @@ export const CriticNameComponent = ({
           >
             A little advice: Choose a goofy or dorky name that make you
             smile/giggle/roll your eyes in some way. This is not only a way to
-            bring in some fun in your day to day life, but also a really helpful
+            bring in some fun in your day to day life, but also really helpful
             to keep that inner voice more distant. Like, try noticing a negative
             thought and then reply to yourself "Oh, Hi Klas-Göran (insert your
             choosen inner critics name), are you here again?"

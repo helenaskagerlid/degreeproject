@@ -56,7 +56,7 @@ export const CriticThoughtsComponent = ({
             isHeadingVisible ? "is-visible" : ""
           }`}
         >
-          Step 1: Your inner Ciritic's Thoughts
+          Step 1: Your inner Critic's Thoughts
         </h2>
         <div className="step-one-wrapper">
           <img
@@ -76,7 +76,7 @@ export const CriticThoughtsComponent = ({
               isTextVisible ? "is-visible" : ""
             }`}
           >
-            Take a moment to notice which kinds of thoughts your inner ciritc is
+            Take a moment to notice which kinds of thoughts your inner critic is
             thinking in this situation. Then write them down here below:
           </p>
           <form className="step-one-form" onSubmit={handleSubmit}>
