@@ -1,4 +1,5 @@
 @use "./functions.scss" as func;
+@use "sass:map";
 
 $breakpoints-up: (
   "small": func.em(400),
@@ -9,7 +10,7 @@ $breakpoints-up: (
 );
 
 @mixin breakpoint($size) {
-  @media (min-width: map-get($breakpoints-up, $size)) {
+  @media (min-width: map.get($breakpoints-up, $size)) {
     @content;
   }
 }
