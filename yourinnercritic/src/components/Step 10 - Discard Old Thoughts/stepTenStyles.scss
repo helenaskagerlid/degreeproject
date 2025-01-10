@@ -5,6 +5,10 @@
   animation: spinAndShrink 5s ease-in-out forwards;
 }
 
+.step-ten-old-thoughts {
+  font-size: func.rem(25);
+}
+
 @keyframes spinAndShrink {
   0% {
     transform: rotate(0deg) scale(1);
