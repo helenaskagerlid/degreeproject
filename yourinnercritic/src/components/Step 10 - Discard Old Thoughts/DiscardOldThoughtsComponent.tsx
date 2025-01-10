@@ -70,7 +70,7 @@ export const DiscardOldThoughtsComponent = ({
               : ""
           }
         >
-          <p>{yourOldThoughts}</p>
+          <p className="step-ten-old-thoughts">{yourOldThoughts}</p>
         </div>
         <div className="step-ten-button-wrapper">
           <button
