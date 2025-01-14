@@ -34,6 +34,7 @@
     height: func.rem(1500);
     width: calc(func.rem(320) + 10vw);
     object-fit: cover;
+    margin-bottom: func.rem(40);
 
     @include media.breakpoint(medium) {
       height: func.rem(1500);

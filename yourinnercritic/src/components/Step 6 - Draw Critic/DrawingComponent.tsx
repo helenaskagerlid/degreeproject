@@ -46,22 +46,14 @@ export const DrawingComponent = ({
           >
             <p>
               {" "}
-              Okay, for your next step you will need to bring out your
-              creativivy and leave the perfectionist behind! Beacuse now you are
-              invited to draw your inner critic. You can choose to do it on
-              regular paper or on your device in a digital drawing program. But
-              we would like to recommend you to go and look for your coloring
-              pens and a paper since it's proven to have a very positive effect
-              on the brain to create something in the physical world.
-            </p>
-            <p>
-              {" "}
-              This step is also very important to help you get more distance
-              from your inner critic since it will be placed even more outside
-              of your head when you bring it out on paper. So, just use your
-              creativity — give your inner critic a shape, colors, and details
-              that reflect how you feel about it. Don’t worry about making it
-              perfect; the goal is to express yourself and to have a fun time.
+              Now it’s time to unleash your creativity and leave perfectionism
+              behind! Your task is to draw your inner critic. You can use paper
+              and coloring pens or a digital tool, but we recommend the physical
+              approach, as it’s shown to have a positive effect on the brain.
+              This step helps create distance from your inner critic, making it
+              feel more separate from you. Let your creativity flow—give it
+              shape, color, and details that reflect your feelings. Don’t worry
+              about perfection, just enjoy the process and express yourself!
             </p>
           </div>
         </div>
