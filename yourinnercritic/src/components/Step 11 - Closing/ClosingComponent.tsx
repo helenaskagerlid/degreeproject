@@ -24,6 +24,15 @@ export const ClosingComponent = ({
         >
           Great job!
         </h2>
+        <img
+          className="step-eleven-celebration-image animation-img"
+          width={3709}
+          height={5564}
+          onLoad={(e) => e.currentTarget.classList.add("is-visible")}
+          src="/closingcelebration.jpg"
+          alt="two dogs with party hats"
+          loading="lazy"
+        />
         <p
           ref={headingRef}
           className={`step-eleven text reveal-text ${

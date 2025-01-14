@@ -1,6 +1,19 @@
+@use "../../utils/functions.scss" as func;
+
 .closing-section {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.step-eleven-celebration-image {
+  margin-top: func.rem(10);
+  max-height: func.rem(400);
+  width: clamp(func.rem(200), func.rem(290) + 5vw, func.rem(320));
+  object-fit: cover;
+}
+
+.step-eleven-heading {
+  font-size: func.rem(40);
 }
