@@ -54,10 +54,10 @@ export const DiscardOldThoughtsComponent = ({
   return (
     <>
       <section ref={discardThoughtsRef}>
-        <h2>Step 10 - Throw away those old thoughts</h2>
+        <h2>Step 10 - Throw away the unhelpful thoughts</h2>
         <p>
-          Now it is really time to discard those old thoughts. Let's do this by
-          choosing an animation to make them disappear
+          Now it is really time to discard those unhelpful thoughts. Let's do
+          this by choosing an animation to make them disappear
         </p>
         <div
           className={
