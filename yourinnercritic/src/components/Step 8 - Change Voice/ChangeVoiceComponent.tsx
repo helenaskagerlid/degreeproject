@@ -64,7 +64,11 @@ export const ChangeVoiceComponent = () => {
   return (
     <section className="change-voice-section">
       <div className="recorder">
-        <button className="btn" onClick={startRecording} disabled={isRecording}>
+        <button
+          className="start-btn btn"
+          onClick={startRecording}
+          disabled={isRecording}
+        >
           Start recording
         </button>
 
