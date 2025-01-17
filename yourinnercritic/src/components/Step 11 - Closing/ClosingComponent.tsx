@@ -31,7 +31,6 @@ export const ClosingComponent = ({
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
           src="/closingcelebration.jpg"
           alt="two dogs with party hats"
-          loading="lazy"
         />
         <p
           ref={headingRef}

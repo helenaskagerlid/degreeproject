@@ -57,7 +57,6 @@ export const DrawingAnimationComponent = ({
           src="https://sketch.metademolab.com/canvas"
           width="1100px"
           height="700px"
-          loading="lazy"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
         ></iframe>
         <p className="step-seven-text">

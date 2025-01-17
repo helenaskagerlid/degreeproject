@@ -47,7 +47,6 @@ export const EmotionImageComponent = ({
           src="/introemotionimage.webp"
           alt="A woman sitting on the street with a camera on a stand in front of her"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
-          loading="lazy"
         />
         <div className="step-four-wrapper">
           <h2
