@@ -104,14 +104,14 @@ export const ChangeVoiceComponent = () => {
             <option value="mountaintroll">Mountaintroll</option>
           </select>
           <button
-            className="btn"
+            className="btn effect-btn"
             onClick={applyEffect}
             disabled={!selectedEffect || isPlaying}
           >
             Play with effect
           </button>
           <button
-            className="btn stop-btn"
+            className="btn effect-btn"
             onClick={stopPlayback}
             disabled={!isPlaying}
           >
