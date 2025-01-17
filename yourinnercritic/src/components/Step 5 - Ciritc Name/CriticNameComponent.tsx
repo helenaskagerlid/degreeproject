@@ -49,7 +49,6 @@ export const CriticNameComponent = ({
           src="/criticNameImage.webp"
           alt="A blurry image of a slate with different names written on it"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
-          loading="lazy"
         />
         <div className="step-five-wrapper">
           <h2

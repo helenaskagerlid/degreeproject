@@ -27,7 +27,6 @@ export const DrawingComponent = ({
           height={4000}
           alt="a child writing a cartoon character on a paper on the floor"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
-          loading="lazy"
         />
         <div className="step-six-text-wrapper">
           <h2

@@ -69,7 +69,6 @@ export const CriticThoughtsComponent = ({
             onLoad={(e) => e.currentTarget.classList.add("is-visible")}
             src="/criticthoughtsimg.webp"
             alt="a dark haired head with a hand holding a thought bubble over it"
-            loading="lazy"
           />
         </div>
         <div className="step-one-wrapper">
