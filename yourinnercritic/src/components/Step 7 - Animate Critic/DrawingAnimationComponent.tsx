@@ -61,7 +61,7 @@ export const DrawingAnimationComponent = ({
         ></iframe>
         <p className="step-seven-text">
           When you have seen your inner critic in some different funny
-          animations and feel ready for the next step you kan press the arrow
+          animations and feel ready for the next step you can press the arrow
           below
         </p>
         {/*

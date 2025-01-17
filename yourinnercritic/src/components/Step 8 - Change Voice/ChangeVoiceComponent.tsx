@@ -64,7 +64,11 @@ export const ChangeVoiceComponent = () => {
   return (
     <section className="change-voice-section">
       <div className="recorder">
-        <button className="btn" onClick={startRecording} disabled={isRecording}>
+        <button
+          className="start-btn btn"
+          onClick={startRecording}
+          disabled={isRecording}
+        >
           Start recording
         </button>
 
@@ -100,14 +104,14 @@ export const ChangeVoiceComponent = () => {
             <option value="mountaintroll">Mountaintroll</option>
           </select>
           <button
-            className="btn"
+            className="btn effect-btn"
             onClick={applyEffect}
             disabled={!selectedEffect || isPlaying}
           >
             Play with effect
           </button>
           <button
-            className="btn stop-btn"
+            className="btn effect-btn"
             onClick={stopPlayback}
             disabled={!isPlaying}
           >
