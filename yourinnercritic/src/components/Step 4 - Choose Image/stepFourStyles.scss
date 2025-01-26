@@ -11,6 +11,10 @@
     border: 10px solid purple;
   }
 
+  .step-four-label {
+    font-size: func.rem(14);
+  }
+
   @include media.breakpoint(medium) {
     display: grid;
     grid-template-columns: 1fr 1fr;

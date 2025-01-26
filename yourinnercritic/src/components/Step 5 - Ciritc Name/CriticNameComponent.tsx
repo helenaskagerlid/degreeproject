@@ -68,10 +68,15 @@ export const CriticNameComponent = ({
             Now it's time to take a moment and give your inner critic a name.
           </p>
           <form className="step-five-form" onSubmit={handleSubmit}>
+            <label htmlFor="nameInput" className="step-five-label">
+              Enter the inner critics name here
+            </label>
             <input
+              id="nameInput"
               className="step-five-input"
               type="text"
               value={userInput}
+              placeholder="E.g 'Bitter Betty'"
               onChange={(e) => setUserInput(e.target.value)}
             />
             {noName && (
@@ -80,7 +85,11 @@ export const CriticNameComponent = ({
             <button className="step-five-button btn">Save</button>
             {showCheckmark && (
               <div className="step-five-checkmark-wrapper">
-                {name && <p className="step-five-name-text">Named saved</p>}
+                {name && (
+                  <p className="step-five-name-text" aria-live="polite">
+                    Named saved
+                  </p>
+                )}
                 <div className="step-five-checkmark"></div>
               </div>
             )}
