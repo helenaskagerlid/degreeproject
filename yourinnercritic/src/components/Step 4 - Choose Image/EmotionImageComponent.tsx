@@ -64,18 +64,23 @@ export const EmotionImageComponent = ({
               isTextVisible ? "is-visible" : ""
             }`}
           >
-            Your next step is to write the emotion you notice in step three in
+            Your next step is to write the emotion you noticed in step three in
             the box below, click search and choose an image that you think
             represent how you are feeling. This is helpful because it visualize
             the emotion outside of your body and helps the brain to get some
             distance to the emotion
           </p>
           <form className="step-four-form" onSubmit={handleSubmit}>
+            <label className="step-four-label" htmlFor="imageSearch">
+              Enter your emotion
+            </label>
             <input
+              id="imageSearch"
               className="step-four-input"
               type="text"
               value={userInput}
               onChange={(e) => setUserInput(e.target.value)}
+              placeholder="E.g: 'Frustration'"
             />
             <button className="btn step-four-button">Search Photos</button>
           </form>

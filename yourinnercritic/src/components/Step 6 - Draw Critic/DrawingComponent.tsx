@@ -25,7 +25,7 @@ export const DrawingComponent = ({
           src="/drawing-critic-img.jpg"
           width={6000}
           height={4000}
-          alt="a child writing a cartoon character on a paper on the floor"
+          alt="three happy children where two has drawings of watermelons"
           onLoad={(e) => e.currentTarget.classList.add("is-visible")}
         />
         <div className="step-six-text-wrapper">
