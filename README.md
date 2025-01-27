@@ -118,6 +118,9 @@ Step 9:
 Step 10:
 ![Screenshot Step 10](/yourinnercritic/public/Step10.png)
 
+Closing:
+![Screenshot Closing](/yourinnercritic/public/Closing.png)
+
 ## Future Development
 
 - **Improved Animation Integration**: Replace the iframe with direct integration of Meta’s open-source animation code.
