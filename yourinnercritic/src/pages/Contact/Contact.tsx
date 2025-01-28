@@ -15,8 +15,11 @@ export const Contact = () => {
           <div className="contact-image-wrapper">
             <img
               className="contact-photo"
-              src="\public\helenaprofile.JPG"
-              alt=""
+              src="\public\helenaprofile.jpg"
+              width={1920}
+              height={1280}
+              onLoad={(e) => e.currentTarget.classList.add("is-visible")}
+              alt="a profile pictore of a woman with blond hair"
             />
           </div>
         </article>

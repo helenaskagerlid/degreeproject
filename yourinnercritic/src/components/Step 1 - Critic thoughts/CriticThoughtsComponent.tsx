@@ -111,7 +111,7 @@ export const CriticThoughtsComponent = ({
 
               <div className="step-one-save-wrapper">
                 {" "}
-                <button className="btn step-one-btn">Save you thoughts</button>
+                <button className="btn step-one-btn">Save the thoughts</button>
                 {showCheckmark && (
                   <div className="step-one-checkmark-wrapper">
                     {savedMessage && <p className="saved">Saved</p>}
