@@ -14,10 +14,6 @@ Whether you’re an adult, teen, or child, this project invites you to laugh mor
 
 https://degreeproject-of6l.vercel.app/
 
-## Purpose
-
-The aim of this project is to help people engage with their inner critic in a fun and creative way. Traditional tools for managing inner criticism can often feel heavy and serious. This project is designed to be lighthearted and easy to use, offering a unique approach to personal growth.
-
 ## Why I Built This
 
 I created this project because of my personal experiences with a harsh inner critic. I’ve struggled with self-doubt and negativity, and I know many others face similar challenges. This platform is my way of providing a helpful resource that feels approachable and enjoyable.
@@ -98,12 +94,6 @@ Step 10:
 
 Closing:
 ![Screenshot Closing](/yourinnercritic/public/Closing.png)
-
-## Future Development
-
-- **Improved Animation Integration**: Replace the iframe with direct integration of Meta’s open-source animation code.
-- **Custom Animations**: Develop original animations for the inner critic.
-- **Positive Voice Feature**: Add a "sister" feature to strengthen the user’s inner positive, supportive voice.
 
 ## Acknowledgments
 
