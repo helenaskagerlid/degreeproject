@@ -61,28 +61,6 @@ To set up the project locally:
    npm run dev
    ```
 
-## Data Handling
-
-- **User Input**: Thoughts and the inner critic’s name are stored temporarily in local storage. Users can clear this data by clicking "Delete" or leaving the page.
-- **Images**: Images representing emotions are fetched using Pixabay's API.
-
-## Accessibility (a11y)
-
-Accessibility is a core focus of the project:
-
-- **Forms**: Accessible labels and instructions are used to guide users.
-- **Colors and Fonts**: Chosen to ensure readability and inclusivity.
-- **Alt Text**: All images include descriptive alt text.
-
-## Testing
-
-- **Unit Testing**: Tests written with Vitest and React Testing Library.
-- **User Testing**: Conducted with three users to gather feedback and improve the flow and usability of the application.
-
-## Deployment
-
-The project is deployed on [Vercel](https://vercel.com/). You can access the live version of the project [here](#).
-
 ## Screenshots
 
 Homepage:
@@ -125,7 +103,7 @@ Closing:
 
 - **Improved Animation Integration**: Replace the iframe with direct integration of Meta’s open-source animation code.
 - **Custom Animations**: Develop original animations for the inner critic.
-- **Positive Voice Feature**: Add a "sister" feature to strengthen the user’s positive, supportive voice.
+- **Positive Voice Feature**: Add a "sister" feature to strengthen the user’s inner positive, supportive voice.
 
 ## Acknowledgments
 
